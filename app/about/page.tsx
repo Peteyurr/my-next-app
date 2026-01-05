@@ -2,55 +2,55 @@
 // app/about/page.tsx
 export default function AboutLeadPage() {
   return (
-    <main className="min-h-screen bg-zinc-950 text-zinc-50 px-5 py-14">
-      <div className="mx-auto max-w-md">
+    <main className="min-h-screen bg-zinc-950 text-zinc-50 px-6 py-16 md:px-8 md:py-20">
+      <div className="mx-auto max-w-2xl px-4 sm:px-6">
         {/* Subtle header / identity */}
-        <p className="mb-6 text-xs uppercase tracking-widest text-zinc-500">
+        <p className="mb-6 text-sm uppercase tracking-wide text-zinc-500">
           Petyurr
         </p>
 
         {/* Headline */}
-        <h1 className="text-3xl font-semibold leading-tight">
+        <h1 className="text-4xl md:text-5xl font-extrabold leading-tight tracking-tight">
           Strength & Conditioning for Combat Sports
         </h1>
 
         {/* Body copy */}
-        <p className="mt-4 text-[15.5px] leading-relaxed text-zinc-300">
-          If you train a combat sport seriously, strength work should support your
-          training — not compete with it.
+        <p className="mt-6 text-lg md:text-xl leading-relaxed md:leading-8 text-zinc-300">
+          Your training should make your rounds easier, cleaner, and more consistent.
         </p>
 
-        <p className="mt-3 text-[15.5px] leading-relaxed text-zinc-300">
-          Most people don’t struggle because they aren’t working hard enough.
-          They struggle because different parts of their training pull in
-          different directions.
+        <p className="mt-4 text-lg md:text-xl leading-relaxed md:leading-8 text-zinc-300">
+          Most programs add volume or intensity without asking whether the work
+          survives fatigue or protects skill practice. That mismatch steals timing
+          and effectiveness on fight night.
         </p>
 
-        <p className="mt-3 text-[15.5px] leading-relaxed text-zinc-300">
-          This blueprint exists to fix that.
+        <p className="mt-4 text-lg md:text-xl leading-relaxed md:leading-8 text-zinc-300">
+          This blueprint gives simple rules and session choices designed for
+          carryover — less interference, more usable strength and conditioning.
         </p>
 
         {/* Signature divider */}
-        <div className="my-10 h-px bg-gradient-to-r from-transparent via-zinc-700 to-transparent" />
+        <div className="my-8 h-px bg-gradient-to-r from-transparent via-zinc-700 to-transparent" />
 
         {/* What they get */}
-        <h2 className="text-lg font-medium">
+        <h2 className="text-xl md:text-2xl font-semibold">
           Combat Strength + Conditioning Blueprint
         </h2>
 
-        <ul className="mt-4 space-y-3 text-[15.5px] leading-relaxed text-zinc-300">
-          <li>• Strength that actually carries over</li>
-          <li>• Conditioning that matches rounds</li>
-          <li>• Fewer mistakes with recovery</li>
-          <li>• Clear keep / cut rules</li>
+        <ul className="mt-4 space-y-2 text-base md:text-lg leading-relaxed text-zinc-300 list-disc pl-5">
+          <li>Strength that shows up in rounds</li>
+          <li>Conditioning matched to round structure</li>
+          <li>Minimal interference with skill sessions</li>
+          <li>Clear keep / cut rules for every session</li>
         </ul>
 
-        <p className="mt-4 text-sm text-zinc-400">
-          Short. Practical. Built to reduce interference.
+        <p className="mt-3 text-sm text-zinc-400">
+          Short, practical rules you can apply immediately.
         </p>
 
         {/* Signature divider */}
-        <div className="my-10 h-px bg-gradient-to-r from-transparent via-zinc-700 to-transparent" />
+        <div className="my-8 h-px bg-gradient-to-r from-transparent via-zinc-700 to-transparent" />
 
         {/* FORM */}
         <form
@@ -82,7 +82,7 @@ export default function AboutLeadPage() {
               name="name"
               required
               placeholder="Your name"
-              className="mt-2 w-full rounded-xl border border-zinc-800 bg-zinc-950 px-4 py-4 text-base text-zinc-50 outline-none focus:border-zinc-500"
+              className="mt-2 w-full rounded-xl border border-zinc-800 bg-zinc-950 px-4 py-3 text-sm md:text-base text-zinc-50 placeholder-zinc-500 outline-none focus:border-zinc-500 focus:ring-1 focus:ring-zinc-700"
             />
           </div>
 
@@ -93,26 +93,24 @@ export default function AboutLeadPage() {
               name="email"
               required
               placeholder="your.email@example.com"
-              className="mt-2 w-full rounded-xl border border-zinc-800 bg-zinc-950 px-4 py-4 text-base text-zinc-50 outline-none focus:border-zinc-500"
+              className="mt-2 w-full rounded-xl border border-zinc-800 bg-zinc-950 px-4 py-3 text-sm md:text-base text-zinc-50 placeholder-zinc-500 outline-none focus:border-zinc-500 focus:ring-1 focus:ring-zinc-700"
             />
           </div>
           <input type="hidden" name="source" value="IG Blueprint Opt-In" />
 
           <button
             type="submit"
-            className="mt-6 w-full rounded-2xl bg-white py-4 text-base font-medium text-zinc-950 hover:bg-zinc-200"
+            className="mt-6 w-full rounded-2xl bg-white py-3 md:py-4 text-sm md:text-base font-medium text-zinc-950 hover:bg-zinc-200 shadow-sm"
           >
             Send me the blueprint
           </button>
         </form>
 
-        <p className="mt-5 text-xs text-zinc-500">
-          No spam. One follow-up message only.
-        </p>
+        <p className="mt-4 text-xs text-zinc-500">No spam. One follow-up message only.</p>
 
         {/* Footer cue */}
-        <p className="mt-14 text-xs text-zinc-500 text-center">
-          Built for people who take training seriously.
+        <p className="mt-10 text-xs text-zinc-500 text-center">
+          For fighters who need training that actually transfers to rounds.
         </p>
       </div>
     </main>

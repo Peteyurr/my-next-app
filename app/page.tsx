@@ -22,7 +22,7 @@ export default function HomePage() {
 
           <nav className="flex items-center gap-6 text-sm text-zinc-300">
             <Link href="/about" className="hover:text-white transition-colors">
-              About
+              about
             </Link>
             <Link href="/task" className="hover:text-white transition-colors">
               Start Here
@@ -42,60 +42,55 @@ export default function HomePage() {
         <div className="max-w-3xl">
           <p className="inline-flex items-center gap-2 rounded-full border border-zinc-800 bg-zinc-900/60 px-4 py-1.5 text-xs text-zinc-300">
             <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
-            The Transfer Filter
+            Round-Ready Filter
           </p>
 
-          <h1 className="mt-8 text-5xl font-semibold leading-[1.05] tracking-tight md:text-7xl">
+          <h1 className="mt-8 text-6xl md:text-7xl lg:text-8xl font-extrabold leading-tight tracking-tight">
             Strength training
             <br />
             <span className="bg-gradient-to-r from-zinc-100 to-zinc-400 bg-clip-text text-transparent">
-              shouldn’t steal
+              should carry to rounds
             </span>{" "}
-            from your combat training.
+            — not compete with skill work.
           </h1>
 
-          <p className="mt-8 text-lg leading-relaxed text-zinc-300 md:text-xl">
-            If you train a combat sport seriously — alongside work, school, or life —
-            you don’t have room for training that competes with itself.
-            <br />
-            <span className="text-zinc-100">
-              This system removes decisions that quietly drain recovery, timing, and
-              expression under fatigue.
-            </span>
+          <p className="mt-6 text-lg md:text-xl leading-8 text-zinc-300 max-w-2xl">
+            When strength or conditioning leaves you sore or slow, rounds suffer.
+            <span className="block mt-3 text-zinc-100">The Round-Ready Blueprint removes work that fails under fatigue and replaces it with short, transferable sessions.</span>
           </p>
 
           <div className="mt-10 flex flex-col gap-4 sm:flex-row">
             <Link
               href="/task"
-              className="inline-flex items-center justify-center rounded-2xl bg-white px-8 py-4 text-base font-medium text-zinc-950 hover:bg-zinc-200 transition"
+              className="inline-flex items-center justify-center rounded-2xl bg-white px-10 py-4 text-lg font-semibold text-zinc-950 hover:bg-zinc-200 transition"
             >
-              Train without interference
+              Get the blueprint
             </Link>
             <Link
               href="/about"
               className="inline-flex items-center justify-center rounded-2xl border border-zinc-800 bg-zinc-900/40 px-8 py-4 text-base font-medium text-white hover:bg-zinc-900 transition"
             >
-              Why this exists
+              Why it works
             </Link>
           </div>
 
           <div className="mt-14 grid gap-4 sm:grid-cols-3">
-            <div className="rounded-2xl border border-zinc-800 bg-zinc-900/50 p-5">
-              <p className="font-medium text-white">Time-aware</p>
-              <p className="mt-1 text-sm text-zinc-400">
-                Built for limited recovery and busy weeks.
+            <div className="rounded-2xl border border-zinc-800 bg-zinc-900/50 p-6">
+              <p className="font-semibold text-white text-base">Time-aware</p>
+              <p className="mt-2 text-sm md:text-base text-zinc-400 leading-6">
+                Short sessions that fit busy weeks.
               </p>
             </div>
-            <div className="rounded-2xl border border-zinc-800 bg-zinc-900/50 p-5">
-              <p className="font-medium text-white">High transfer</p>
-              <p className="mt-1 text-sm text-zinc-400">
-                Strength that survives fatigue.
+            <div className="rounded-2xl border border-zinc-800 bg-zinc-900/50 p-6">
+              <p className="font-semibold text-white text-base">High transfer</p>
+              <p className="mt-2 text-sm md:text-base text-zinc-400 leading-6">
+                Strength and drills that hold up in rounds.
               </p>
             </div>
-            <div className="rounded-2xl border border-zinc-800 bg-zinc-900/50 p-5">
-              <p className="font-medium text-white">Protected recovery</p>
-              <p className="mt-1 text-sm text-zinc-400">
-                Combat practice stays the priority.
+            <div className="rounded-2xl border border-zinc-800 bg-zinc-900/50 p-6">
+              <p className="font-semibold text-white text-base">Protected recovery</p>
+              <p className="mt-2 text-sm md:text-base text-zinc-400 leading-6">
+                Protects skill practice and timing.
               </p>
             </div>
           </div>
@@ -104,61 +99,58 @@ export default function HomePage() {
 
       {/* Rule + Value */}
       <section className="mx-auto max-w-7xl px-6 pb-28">
-        <div className="grid gap-6 md:grid-cols-3">
+          <div className="grid gap-6 md:grid-cols-3">
           <div className="rounded-3xl border border-zinc-800 bg-zinc-900/50 p-7">
-            <h2 className="text-lg font-semibold">The tension</h2>
-            <ul className="mt-4 space-y-3 text-sm text-zinc-300">
-              <li>• You want strength without lingering soreness</li>
-              <li>• You want conditioning that supports rounds</li>
-              <li>• You can’t afford junk volume</li>
+            <h2 className="text-xl font-semibold">The tension</h2>
+            <ul className="mt-4 space-y-3 text-base md:text-base text-zinc-300 leading-7">
+              <li>• Strength that leaves you sore</li>
+              <li>• Conditioning that disrupts timing</li>
+              <li>• Extra volume that breaks technique</li>
             </ul>
-            <p className="mt-4 text-sm text-zinc-400">
-              When time and recovery are limited, alignment matters more than volume.
+            <p className="mt-4 text-sm md:text-base text-zinc-400 leading-7">
+              With limited recovery, bad work steals your best reps.
             </p>
           </div>
 
           <div className="rounded-3xl border border-zinc-800 bg-zinc-900/50 p-7">
-            <h2 className="text-lg font-semibold">The rule</h2>
-            <p className="mt-4 text-sm text-zinc-300">
-              <span className="font-medium text-white">
-                If it doesn’t survive fatigue and skill expression, it doesn’t belong.
-              </span>
+            <h2 className="text-xl font-semibold">The rule</h2>
+            <p className="mt-4 text-base text-zinc-300">
+              <span className="font-medium text-white">If it doesn’t transfer to rounds or protect skill, cut it.</span>
             </p>
-            <p className="mt-3 text-sm text-zinc-400">
-              It’s not exciting. That’s why it works.
+            <p className="mt-3 text-sm md:text-base text-zinc-400 leading-7">
+              Choices that prioritize carryover.
             </p>
           </div>
 
           <div className="rounded-3xl border border-zinc-800 bg-zinc-900/50 p-7">
-            <h2 className="text-lg font-semibold">What you get</h2>
-            <ul className="mt-4 space-y-3 text-sm text-zinc-300">
-              <li>• Combat-aligned strength structure</li>
-              <li>• Recovery-aware exercise selection</li>
-              <li>• Clear keep / cut rules</li>
-              <li>• Fewer mistakes, better weeks</li>
+            <h2 className="text-xl font-semibold">What you get</h2>
+            <ul className="mt-4 space-y-3 text-base text-zinc-300 leading-7">
+              <li>• Round-ready strength structure</li>
+              <li>• Conditioning matched to rounds</li>
+              <li>• Clear keep/cut rules</li>
+              <li>• Fewer mistakes, sharper practice</li>
             </ul>
           </div>
         </div>
 
         <div className="mt-16 rounded-[2rem] border border-zinc-800 bg-gradient-to-b from-zinc-900/70 to-zinc-950/70 p-10 text-center">
           <p className="mx-auto max-w-2xl text-sm text-zinc-300">
-            <span className="font-medium text-white">Disclaimer:</span> This isn’t about credentials or outcomes.
-            It’s a decision-making system designed to keep training from working against itself.
+            <span className="font-medium text-white">Direct:</span> This is about transfer, not hype. A simple decision system so strength adds to rounds.
           </p>
 
           <h3 className="mt-8 text-3xl font-semibold tracking-tight">
-            Train with clarity instead of guesswork.
+            Make strength show up where it matters.
           </h3>
 
           <Link
             href="/task"
             className="mt-8 inline-flex items-center justify-center rounded-2xl bg-white px-10 py-4 text-base font-medium text-zinc-950 hover:bg-zinc-200 transition"
           >
-            Start here
+            Get the blueprint
           </Link>
 
           <p className="mt-6 text-xs uppercase tracking-widest text-zinc-500">
-            Not more work. Fewer conflicts.
+            Less fluff. More carryover.
           </p>
         </div>
       </section>
