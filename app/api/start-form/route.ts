@@ -29,7 +29,7 @@ export async function POST(req: Request) {
     // redirect target so client-side code can navigate. For plain HTML
     // form submissions, return a 303 redirect so the browser follows it.
     const accept = req.headers.get("accept") || "";
-    const redirectPath = "/start/thanks";
+const redirectPath = "/thanks";
 
     if (accept.includes("application/json")) {
       return NextResponse.json({ ok: true, redirect: redirectPath });

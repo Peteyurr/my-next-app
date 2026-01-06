@@ -1,0 +1,8 @@
+export default function DebugPage() {
+  return (
+    <main style={{ padding: 40 }}>
+      <h1>DEBUG PAGE</h1>
+      <p>If you are redirected away from this page, it is NOT your app code.</p>
+    </main>
+  );
+}

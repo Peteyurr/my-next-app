@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 
-// keep static rendering preference, but page is a client component
+// Static preference is fine even though this is client-side
 export const dynamic = "force-static";
 
 export default function StartPage() {
@@ -16,32 +16,28 @@ export default function StartPage() {
     setError(null);
     setSubmitting(true);
 
-    const form = e.currentTarget;
-    const formData = new FormData(form);
+    const formData = new FormData(e.currentTarget);
 
     try {
       const res = await fetch("/api/start-form", {
         method: "POST",
         body: formData,
-        headers: { Accept: "application/json" },
+        headers: {
+          Accept: "application/json",
+        },
       });
 
-      if (res.ok) {
-        const data = await res.json().catch(() => null);
-        if (data && data.redirect) {
-          router.push(data.redirect);
-          return;
-        }
-        // fallback: if no json redirect, try a generic thanks page
-        router.push("/start/thanks");
-        return;
+      if (!res.ok) {
+        const text = await res.text().catch(() => null);
+        throw new Error(text || "Submission failed");
       }
 
-      const text = await res.text().catch(() => null);
-      setError(text || "Submission failed");
+      const data = await res.json();
+
+      // SINGLE SOURCE OF TRUTH
+      router.push(data.redirect ?? "/thanks");
     } catch (err: any) {
-      setError(err?.message || String(err));
-    } finally {
+      setError(err?.message || "Something went wrong");
       setSubmitting(false);
     }
   }
@@ -63,13 +59,13 @@ export default function StartPage() {
 
         <form onSubmit={handleSubmit} className="mt-6 space-y-4">
           <div>
-            <label className="block text-sm text-zinc-400" htmlFor="name">
+            <label htmlFor="name" className="block text-sm text-zinc-400">
               Name
             </label>
             <input
               id="name"
-              type="text"
               name="name"
+              type="text"
               required
               placeholder="Your name"
               className="mt-2 w-full rounded-xl border border-zinc-800 bg-zinc-950 px-4 py-3 text-sm md:text-base text-zinc-50 placeholder-zinc-500 outline-none focus:border-zinc-500 focus:ring-1 focus:ring-zinc-700"
@@ -77,19 +73,20 @@ export default function StartPage() {
           </div>
 
           <div>
-            <label className="block text-sm text-zinc-400" htmlFor="email">
+            <label htmlFor="email" className="block text-sm text-zinc-400">
               Email
             </label>
             <input
               id="email"
-              type="email"
               name="email"
+              type="email"
               required
               placeholder="your.email@example.com"
               className="mt-2 w-full rounded-xl border border-zinc-800 bg-zinc-950 px-4 py-3 text-sm md:text-base text-zinc-50 placeholder-zinc-500 outline-none focus:border-zinc-500 focus:ring-1 focus:ring-zinc-700"
             />
           </div>
 
+          {/* Metadata */}
           <input type="hidden" name="source" value="IG Blueprint Opt-In" />
           <input type="hidden" name="_subject" value="New Blueprint Lead" />
 
@@ -105,7 +102,9 @@ export default function StartPage() {
         {error ? (
           <p className="mt-4 text-sm text-red-400">{error}</p>
         ) : (
-          <p className="mt-4 text-xs text-zinc-500">No spam. One follow-up message only.</p>
+          <p className="mt-4 text-xs text-zinc-500">
+            No spam. One follow-up message only.
+          </p>
         )}
       </div>
     </main>

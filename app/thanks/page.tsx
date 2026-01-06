@@ -1,6 +1,22 @@
+"use client";
+
+import { useEffect, useRef } from "react";
 import Link from "next/link";
 
+export const dynamic = "force-static";
+
 export default function ThanksPage() {
+  const downloadRef = useRef<HTMLAnchorElement | null>(null);
+
+  useEffect(() => {
+    // Delay slightly so page renders first (avoids Safari issues)
+    const timer = setTimeout(() => {
+      downloadRef.current?.click();
+    }, 600);
+
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <main className="min-h-screen bg-zinc-950 text-zinc-50">
       <section className="mx-auto max-w-3xl px-6 py-20">
@@ -12,14 +28,25 @@ export default function ThanksPage() {
           You’re in. Here’s your blueprint.
         </h1>
 
+        {/* Hidden auto-download link */}
+        <a
+          ref={downloadRef}
+          href="/combat-blueprint.pdf"
+          download
+          className="hidden"
+        >
+          Download
+        </a>
+
         <div className="mt-10 flex flex-wrap gap-3">
+          {/* Manual fallback */}
           <a
             href="/combat-blueprint.pdf"
             className="rounded-xl bg-zinc-50 px-5 py-3 font-semibold text-zinc-950"
             target="_blank"
             rel="noreferrer"
           >
-            Download Blueprint (PDF)
+            Download again
           </a>
 
           <Link

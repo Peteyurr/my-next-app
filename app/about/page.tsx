@@ -1,60 +1,38 @@
 // app/about/page.tsx
 export const dynamic = "force-static";
 
-export default function AboutLeadPage() {
+export default function AboutPage() {
   return (
     <main className="min-h-screen bg-zinc-950 text-zinc-50 px-6 py-16 md:px-8 md:py-20">
       <div className="mx-auto max-w-2xl px-4 sm:px-6">
-        {/* Subtle header / identity */}
         <p className="mb-6 text-sm uppercase tracking-wide text-zinc-500">
-          Petyurr
+          Peteyurr
         </p>
 
-        {/* Headline */}
         <h1 className="text-4xl md:text-5xl font-extrabold leading-tight tracking-tight">
           Strength &amp; Conditioning for Combat Sports
         </h1>
 
-        {/* Body copy */}
         <p className="mt-6 text-lg md:text-xl leading-relaxed md:leading-8 text-zinc-300">
           Your training should make your rounds easier, cleaner, and more consistent.
         </p>
 
         <p className="mt-4 text-lg md:text-xl leading-relaxed md:leading-8 text-zinc-300">
-          Most programs add volume or intensity without asking whether the work
-          survives fatigue or protects skill practice. That mismatch steals timing
-          and effectiveness on fight night.
+          Most programs add volume or intensity without asking whether the work survives fatigue
+          or protects skill practice. That mismatch steals timing and effectiveness on fight night.
         </p>
 
-        <p className="mt-4 text-lg md:text-xl leading-relaxed md:leading-8 text-zinc-300">
-          This blueprint gives simple rules and session choices designed for
-          carryover — less interference, more usable strength and conditioning.
-        </p>
-
-        {/* Signature divider */}
         <div className="my-8 h-px bg-gradient-to-r from-transparent via-zinc-700 to-transparent" />
 
-        {/* What they get */}
         <h2 className="text-xl md:text-2xl font-semibold">
-          Combat Strength + Conditioning Blueprint
+          Get the Blueprint (free PDF)
         </h2>
 
-        <ul className="mt-4 space-y-2 text-base md:text-lg leading-relaxed text-zinc-300 list-disc pl-5">
-          <li>Strength that shows up in rounds</li>
-          <li>Conditioning matched to round structure</li>
-          <li>Minimal interference with skill sessions</li>
-          <li>Clear keep / cut rules for every session</li>
-        </ul>
-
-        <p className="mt-3 text-sm text-zinc-400">
-          Short, practical rules you can apply immediately.
+        <p className="mt-3 text-base md:text-lg text-zinc-300">
+          Drop your name + email and I’ll send you to the download page.
         </p>
 
-        {/* Signature divider */}
-        <div className="my-8 h-px bg-gradient-to-r from-transparent via-zinc-700 to-transparent" />
-
-        {/* FORM: submit to YOUR API, which forwards to Formspree and redirects to /start/thanks */}
-<form action="/api/start-form" method="POST" className="mt-6 space-y-4">
+<form action="/thanks" method="GET">
           <div>
             <label className="block text-sm text-zinc-400" htmlFor="name">
               Name
@@ -83,14 +61,14 @@ export default function AboutLeadPage() {
             />
           </div>
 
-          <input type="hidden" name="source" value="IG Blueprint Opt-In" />
+          <input type="hidden" name="source" value="About Page Opt-In" />
           <input type="hidden" name="_subject" value="New Blueprint Lead" />
 
           <button
             type="submit"
-            className="mt-6 w-full rounded-2xl bg-white py-3 md:py-4 text-sm md:text-base font-medium text-zinc-950 hover:bg-zinc-200 shadow-sm"
+            className="mt-4 w-full rounded-2xl bg-white py-3 md:py-4 text-sm md:text-base font-medium text-zinc-950 hover:bg-zinc-200 shadow-sm"
           >
-            Send me the blueprint
+            Get the PDF
           </button>
         </form>
 
@@ -98,7 +76,6 @@ export default function AboutLeadPage() {
           No spam. One follow-up message only.
         </p>
 
-        {/* Footer cue */}
         <p className="mt-10 text-xs text-zinc-500 text-center">
           For fighters who need training that actually transfers to rounds.
         </p>
