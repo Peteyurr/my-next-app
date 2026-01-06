@@ -1,8 +1,10 @@
 "use client";
 // app/about/page.tsx
 import React, { useState } from "react";
+
 export default function AboutLeadPage() {
   const [error, setError] = useState<string | null>(null);
+
   return (
     <main className="min-h-screen bg-zinc-950 text-zinc-50 px-6 py-16 md:px-8 md:py-20">
       <div className="mx-auto max-w-2xl px-4 sm:px-6">
@@ -59,7 +61,8 @@ export default function AboutLeadPage() {
           onSubmit={async (e: any) => {
             e.preventDefault();
             setError(null);
-            const form = e.currentTarget;
+
+            const form = e.currentTarget as HTMLFormElement;
 
             try {
               const res = await fetch("/api/start-form", {
@@ -73,13 +76,16 @@ export default function AboutLeadPage() {
                 try {
                   // @ts-ignore
                   window.__formspreeLastResponse = json;
-                } catch (err) {}
-                form.dataset.submitted = "error";
+                } catch {}
+                try {
+                  form.dataset.submitted = "error";
+                } catch {}
                 setError("Submission failed. Please try again.");
                 return;
               }
 
-window.location.assign("/start/thanks");
+              window.location.assign("/start/thanks");
+              return;
             } catch (err) {
               console.error(err);
               setError("Submission failed. Try again or disable adblock.");
@@ -108,16 +114,9 @@ window.location.assign("/start/thanks");
               className="mt-2 w-full rounded-xl border border-zinc-800 bg-zinc-950 px-4 py-3 text-sm md:text-base text-zinc-50 placeholder-zinc-500 outline-none focus:border-zinc-500 focus:ring-1 focus:ring-zinc-700"
             />
           </div>
+
           <input type="hidden" name="source" value="IG Blueprint Opt-In" />
-          <input
-            type="hidden"
-            name="_next"
-            value={
-              process.env.NEXT_PUBLIC_SITE_URL
-                ? `${process.env.NEXT_PUBLIC_SITE_URL}/thanks`
-                : ""
-            }
-          />
+          {/* No _next fallback here — JS submit controls navigation to /start/thanks */}
 
           <button
             type="submit"
