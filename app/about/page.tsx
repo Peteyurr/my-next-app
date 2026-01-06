@@ -1,10 +1,7 @@
-"use client";
 // app/about/page.tsx
-import React, { useState } from "react";
+export const dynamic = "force-static";
 
 export default function AboutLeadPage() {
-  const [error, setError] = useState<string | null>(null);
-
   return (
     <main className="min-h-screen bg-zinc-950 text-zinc-50 px-6 py-16 md:px-8 md:py-20">
       <div className="mx-auto max-w-2xl px-4 sm:px-6">
@@ -15,7 +12,7 @@ export default function AboutLeadPage() {
 
         {/* Headline */}
         <h1 className="text-4xl md:text-5xl font-extrabold leading-tight tracking-tight">
-          Strength & Conditioning for Combat Sports
+          Strength &amp; Conditioning for Combat Sports
         </h1>
 
         {/* Body copy */}
@@ -56,46 +53,14 @@ export default function AboutLeadPage() {
         {/* Signature divider */}
         <div className="my-8 h-px bg-gradient-to-r from-transparent via-zinc-700 to-transparent" />
 
-        {/* FORM */}
-        <form
-          onSubmit={async (e: any) => {
-            e.preventDefault();
-            setError(null);
-
-            const form = e.currentTarget as HTMLFormElement;
-
-            try {
-              const res = await fetch("/api/start-form", {
-                method: "POST",
-                body: new FormData(form),
-                headers: { Accept: "application/json" },
-              });
-
-              if (!res.ok) {
-                const json = await res.json().catch(() => ({}));
-                try {
-                  // @ts-ignore
-                  window.__formspreeLastResponse = json;
-                } catch {}
-                try {
-                  form.dataset.submitted = "error";
-                } catch {}
-                setError("Submission failed. Please try again.");
-                return;
-              }
-
-              window.location.assign("/start/thanks");
-              return;
-            } catch (err) {
-              console.error(err);
-              setError("Submission failed. Try again or disable adblock.");
-            }
-          }}
-          className="mt-6 space-y-4"
-        >
+        {/* FORM: submit to YOUR API, which forwards to Formspree and redirects to /start/thanks */}
+<form action="/api/start-form" method="POST" className="mt-6 space-y-4">
           <div>
-            <label className="block text-sm text-zinc-400">Name</label>
+            <label className="block text-sm text-zinc-400" htmlFor="name">
+              Name
+            </label>
             <input
+              id="name"
               type="text"
               name="name"
               required
@@ -105,8 +70,11 @@ export default function AboutLeadPage() {
           </div>
 
           <div>
-            <label className="block text-sm text-zinc-400">Email</label>
+            <label className="block text-sm text-zinc-400" htmlFor="email">
+              Email
+            </label>
             <input
+              id="email"
               type="email"
               name="email"
               required
@@ -116,7 +84,7 @@ export default function AboutLeadPage() {
           </div>
 
           <input type="hidden" name="source" value="IG Blueprint Opt-In" />
-          {/* No _next fallback here — JS submit controls navigation to /start/thanks */}
+          <input type="hidden" name="_subject" value="New Blueprint Lead" />
 
           <button
             type="submit"
@@ -126,11 +94,9 @@ export default function AboutLeadPage() {
           </button>
         </form>
 
-        {error ? (
-          <p className="mt-4 text-sm text-red-400">{error}</p>
-        ) : (
-          <p className="mt-4 text-xs text-zinc-500">No spam. One follow-up message only.</p>
-        )}
+        <p className="mt-4 text-xs text-zinc-500">
+          No spam. One follow-up message only.
+        </p>
 
         {/* Footer cue */}
         <p className="mt-10 text-xs text-zinc-500 text-center">

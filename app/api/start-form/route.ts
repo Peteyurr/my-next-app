@@ -1,41 +1,46 @@
+// app/api/start-form/route.ts
 import { NextResponse } from "next/server";
 
 const FORMSPREE_ENDPOINT = "https://formspree.io/f/mpqwyyaz";
 
 export async function POST(req: Request) {
   try {
-    const contentType = req.headers.get("content-type") || "";
+    // Only handle form posts from your site
+    const formData = await req.formData();
 
-    const forwardOptions: any = { method: "POST", headers: {} };
+    // Forward to Formspree server-side (avoids Safari/private/CORS/adblock weirdness)
+    const res = await fetch(FORMSPREE_ENDPOINT, {
+      method: "POST",
+      body: formData,
+      headers: { Accept: "application/json" },
+    });
 
-    if (contentType.includes("application/json")) {
-      const json = await req.json();
-      forwardOptions.body = JSON.stringify(json);
-      forwardOptions.headers["Content-Type"] = "application/json";
-      forwardOptions.headers["Accept"] = "application/json";
-    } else {
-      const formData = await req.formData();
-      forwardOptions.body = formData as unknown as BodyInit;
-      forwardOptions.headers["Accept"] = "application/json";
-      // Do not set Content-Type for FormData (runtime sets boundary)
+    if (!res.ok) {
+      // Bubble up Formspree errors so you can debug
+      const text = await res.text().catch(() => "");
+      return NextResponse.json(
+        { ok: false, error: text || "Formspree submission failed" },
+        { status: 400 }
+      );
     }
 
-    const res = await fetch(FORMSPREE_ENDPOINT, forwardOptions);
+    // SUCCESS: centralize redirect behavior.
+    // If the client expects JSON (JS-fetch), return a JSON payload with the
+    // redirect target so client-side code can navigate. For plain HTML
+    // form submissions, return a 303 redirect so the browser follows it.
+    const accept = req.headers.get("accept") || "";
+    const redirectPath = "/start/thanks";
 
-    if (res.ok) {
-      return NextResponse.json({ ok: true });
+    if (accept.includes("application/json")) {
+      return NextResponse.json({ ok: true, redirect: redirectPath });
     }
 
-    // Try to surface Formspree's response body when available
-    let body: any = null;
-    try {
-      body = await res.json();
-    } catch {
-      body = await res.text().catch(() => null);
-    }
-
-    return NextResponse.json({ ok: false, error: body }, { status: res.status });
+    // 303 forces a GET (prevents POST -> 405 on the target)
+    return NextResponse.redirect(new URL(redirectPath, req.url), 303);
   } catch (err: any) {
-    return NextResponse.json({ ok: false, error: String(err) }, { status: 500 });
+    return NextResponse.json(
+      { ok: false, error: String(err) },
+      { status: 500 }
+    );
   }
 }

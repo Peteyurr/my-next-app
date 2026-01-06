@@ -1,10 +1,50 @@
 "use client";
-// app/start/page.tsx — focused opt-in for the Round-Ready Blueprint
-import React, { useState } from "react";
+
+import { useState } from "react";
+import { useRouter } from "next/navigation";
+
+// keep static rendering preference, but page is a client component
+export const dynamic = "force-static";
 
 export default function StartPage() {
+  const router = useRouter();
+  const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
-  const [submitting, setSubmitting] = useState<boolean>(false);
+
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    setError(null);
+    setSubmitting(true);
+
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+
+    try {
+      const res = await fetch("/api/start-form", {
+        method: "POST",
+        body: formData,
+        headers: { Accept: "application/json" },
+      });
+
+      if (res.ok) {
+        const data = await res.json().catch(() => null);
+        if (data && data.redirect) {
+          router.push(data.redirect);
+          return;
+        }
+        // fallback: if no json redirect, try a generic thanks page
+        router.push("/start/thanks");
+        return;
+      }
+
+      const text = await res.text().catch(() => null);
+      setError(text || "Submission failed");
+    } catch (err: any) {
+      setError(err?.message || String(err));
+    } finally {
+      setSubmitting(false);
+    }
+  }
 
   return (
     <main className="min-h-screen bg-zinc-950 text-zinc-50 px-6 py-16 flex items-center">
@@ -21,74 +61,13 @@ export default function StartPage() {
           Short rules and session plans that protect your skill work and keep strength useful when the rounds start.
         </p>
 
-        <form
-          onSubmit={async (e: any) => {
-            e.preventDefault();
-            setError(null);
-            setSubmitting(true);
-
-            const form: HTMLFormElement = e.currentTarget;
-
-            try {
-              const payload = Object.fromEntries(new FormData(form).entries());
-
-              // 1) Try your API first
-              let res = await fetch("/api/start-form", {
-                method: "POST",
-                body: JSON.stringify(payload),
-                headers: {
-                  "Content-Type": "application/json",
-                  Accept: "application/json",
-                },
-              });
-
-              // 2) If API fails (e.g., 405), fallback to Formspree direct
-              if (!res.ok) {
-                const fd = new FormData();
-                for (const [k, v] of Object.entries(payload)) {
-                  if (typeof v === "string") fd.append(k, v);
-                }
-
-                res = await fetch("https://formspree.io/f/mpqwyyaz", {
-                  method: "POST",
-                  body: fd,
-                  headers: { Accept: "application/json" },
-                });
-              }
-
-              // 3) Redirect only on success
-              if (res.ok) {
-                window.location.assign("/start/thanks");
-                return;
-              }
-
-              // 4) Error handling (keep UI visible, no white screen)
-              const json = await res.json().catch(() => ({}));
-              try {
-                // @ts-ignore
-                window.__formspreeLastResponse = json;
-              } catch {}
-
-              try {
-                form.dataset.submitted = "error";
-              } catch {}
-
-              setError("Submission failed. Please try again.");
-            } catch (err) {
-              console.error(err);
-              try {
-                (e.currentTarget as HTMLFormElement).dataset.submitted = "error";
-              } catch {}
-              setError("Submission failed. Please try again.");
-            } finally {
-              setSubmitting(false);
-            }
-          }}
-          className="mt-6 space-y-4"
-        >
+        <form onSubmit={handleSubmit} className="mt-6 space-y-4">
           <div>
-            <label className="block text-sm text-zinc-400">Name</label>
+            <label className="block text-sm text-zinc-400" htmlFor="name">
+              Name
+            </label>
             <input
+              id="name"
               type="text"
               name="name"
               required
@@ -98,8 +77,11 @@ export default function StartPage() {
           </div>
 
           <div>
-            <label className="block text-sm text-zinc-400">Email</label>
+            <label className="block text-sm text-zinc-400" htmlFor="email">
+              Email
+            </label>
             <input
+              id="email"
               type="email"
               name="email"
               required
@@ -109,7 +91,7 @@ export default function StartPage() {
           </div>
 
           <input type="hidden" name="source" value="IG Blueprint Opt-In" />
-          {/* No native _next fallback — JS handler performs navigation. */}
+          <input type="hidden" name="_subject" value="New Blueprint Lead" />
 
           <button
             type="submit"
