@@ -1,6 +1,8 @@
 "use client";
 // app/about/page.tsx
+import React, { useState } from "react";
 export default function AboutLeadPage() {
+  const [error, setError] = useState<string | null>(null);
   return (
     <main className="min-h-screen bg-zinc-950 text-zinc-50 px-6 py-16 md:px-8 md:py-20">
       <div className="mx-auto max-w-2xl px-4 sm:px-6">
@@ -54,27 +56,37 @@ export default function AboutLeadPage() {
 
         {/* FORM */}
         <form
-  onSubmit={async (e: any) => {
-    e.preventDefault();
-    const form = e.currentTarget;
+          onSubmit={async (e: any) => {
+            e.preventDefault();
+            setError(null);
+            const form = e.currentTarget;
 
-    try {
-      const res = await fetch("https://formspree.io/f/mpqwyyaz", {
-        method: "POST",
-        body: new FormData(form),
-        headers: { Accept: "application/json" },
-      });
+            try {
+              const res = await fetch("/api/start-form", {
+                method: "POST",
+                body: new FormData(form),
+                headers: { Accept: "application/json" },
+              });
 
-      if (!res.ok) throw new Error("Formspree failed");
+              if (!res.ok) {
+                const json = await res.json().catch(() => ({}));
+                try {
+                  // @ts-ignore
+                  window.__formspreeLastResponse = json;
+                } catch (err) {}
+                form.dataset.submitted = "error";
+                setError("Submission failed. Please try again.");
+                return;
+              }
 
-      window.location.assign("/thanks");
-    } catch (err) {
-      console.error(err);
-      alert("Submission failed. Try again or disable adblock.");
-    }
-  }}
-  className="mt-6 space-y-4"
->
+window.location.assign("/start/thanks");
+            } catch (err) {
+              console.error(err);
+              setError("Submission failed. Try again or disable adblock.");
+            }
+          }}
+          className="mt-6 space-y-4"
+        >
           <div>
             <label className="block text-sm text-zinc-400">Name</label>
             <input
@@ -97,6 +109,15 @@ export default function AboutLeadPage() {
             />
           </div>
           <input type="hidden" name="source" value="IG Blueprint Opt-In" />
+          <input
+            type="hidden"
+            name="_next"
+            value={
+              process.env.NEXT_PUBLIC_SITE_URL
+                ? `${process.env.NEXT_PUBLIC_SITE_URL}/thanks`
+                : ""
+            }
+          />
 
           <button
             type="submit"
@@ -106,7 +127,11 @@ export default function AboutLeadPage() {
           </button>
         </form>
 
-        <p className="mt-4 text-xs text-zinc-500">No spam. One follow-up message only.</p>
+        {error ? (
+          <p className="mt-4 text-sm text-red-400">{error}</p>
+        ) : (
+          <p className="mt-4 text-xs text-zinc-500">No spam. One follow-up message only.</p>
+        )}
 
         {/* Footer cue */}
         <p className="mt-10 text-xs text-zinc-500 text-center">

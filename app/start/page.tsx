@@ -1,6 +1,11 @@
 "use client";
 // app/start/page.tsx — focused opt-in for the Round-Ready Blueprint
+import React, { useState } from "react";
+
 export default function StartPage() {
+  const [error, setError] = useState<string | null>(null);
+  const [submitting, setSubmitting] = useState<boolean>(false);
+
   return (
     <main className="min-h-screen bg-zinc-950 text-zinc-50 px-6 py-16 flex items-center">
       <div className="mx-auto w-full max-w-xl">
@@ -13,28 +18,70 @@ export default function StartPage() {
         </p>
 
         <p className="mt-3 text-sm text-zinc-400 max-w-xl">
-          Short rules and session plans that protect your skill work and keep
-          strength useful when the rounds start.
+          Short rules and session plans that protect your skill work and keep strength useful when the rounds start.
         </p>
 
         <form
           onSubmit={async (e: any) => {
             e.preventDefault();
-            const form = e.currentTarget;
+            setError(null);
+            setSubmitting(true);
+
+            const form: HTMLFormElement = e.currentTarget;
 
             try {
-              const res = await fetch("https://formspree.io/f/mpqwyyaz", {
+              const payload = Object.fromEntries(new FormData(form).entries());
+
+              // 1) Try your API first
+              let res = await fetch("/api/start-form", {
                 method: "POST",
-                body: new FormData(form),
-                headers: { Accept: "application/json" },
+                body: JSON.stringify(payload),
+                headers: {
+                  "Content-Type": "application/json",
+                  Accept: "application/json",
+                },
               });
 
-              if (!res.ok) throw new Error("Formspree failed");
+              // 2) If API fails (e.g., 405), fallback to Formspree direct
+              if (!res.ok) {
+                const fd = new FormData();
+                for (const [k, v] of Object.entries(payload)) {
+                  if (typeof v === "string") fd.append(k, v);
+                }
 
-              window.location.assign("/thanks");
+                res = await fetch("https://formspree.io/f/mpqwyyaz", {
+                  method: "POST",
+                  body: fd,
+                  headers: { Accept: "application/json" },
+                });
+              }
+
+              // 3) Redirect only on success
+              if (res.ok) {
+                window.location.assign("/start/thanks");
+                return;
+              }
+
+              // 4) Error handling (keep UI visible, no white screen)
+              const json = await res.json().catch(() => ({}));
+              try {
+                // @ts-ignore
+                window.__formspreeLastResponse = json;
+              } catch {}
+
+              try {
+                form.dataset.submitted = "error";
+              } catch {}
+
+              setError("Submission failed. Please try again.");
             } catch (err) {
               console.error(err);
-              alert("Submission failed. Try again or disable adblock.");
+              try {
+                (e.currentTarget as HTMLFormElement).dataset.submitted = "error";
+              } catch {}
+              setError("Submission failed. Please try again.");
+            } finally {
+              setSubmitting(false);
             }
           }}
           className="mt-6 space-y-4"
@@ -62,16 +109,22 @@ export default function StartPage() {
           </div>
 
           <input type="hidden" name="source" value="IG Blueprint Opt-In" />
+          {/* No native _next fallback — JS handler performs navigation. */}
 
           <button
             type="submit"
-            className="mt-4 w-full rounded-2xl bg-white py-3 text-base font-medium text-zinc-950 hover:bg-zinc-200 shadow-sm"
+            disabled={submitting}
+            className="mt-4 w-full rounded-2xl bg-white py-3 text-base font-medium text-zinc-950 hover:bg-zinc-200 shadow-sm disabled:opacity-60"
           >
-            Send me the blueprint
+            {submitting ? "Sending…" : "Send me the blueprint"}
           </button>
         </form>
 
-        <p className="mt-4 text-xs text-zinc-500">No spam. One follow-up message only.</p>
+        {error ? (
+          <p className="mt-4 text-sm text-red-400">{error}</p>
+        ) : (
+          <p className="mt-4 text-xs text-zinc-500">No spam. One follow-up message only.</p>
+        )}
       </div>
     </main>
   );
