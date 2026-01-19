@@ -1,47 +1,9 @@
 "use client";
 
-import { useState } from "react";
-import { useRouter } from "next/navigation";
-
 // Static preference is fine even though this is client-side
 export const dynamic = "force-static";
 
 export default function StartPage() {
-  const router = useRouter();
-  const [submitting, setSubmitting] = useState(false);
-  const [error, setError] = useState<string | null>(null);
-
-  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
-    e.preventDefault();
-    setError(null);
-    setSubmitting(true);
-
-    const formData = new FormData(e.currentTarget);
-
-    try {
-      const res = await fetch("/api/start-form", {
-        method: "POST",
-        body: formData,
-        headers: {
-          Accept: "application/json",
-        },
-      });
-
-      if (!res.ok) {
-        const text = await res.text().catch(() => null);
-        throw new Error(text || "Submission failed");
-      }
-
-      const data = await res.json();
-
-      // SINGLE SOURCE OF TRUTH
-      router.push(data.redirect ?? "/thanks");
-    } catch (err: any) {
-      setError(err?.message || "Something went wrong");
-      setSubmitting(false);
-    }
-  }
-
   return (
     <main className="min-h-screen bg-zinc-950 text-zinc-50 px-6 py-16 flex items-center">
       <div className="mx-auto w-full max-w-xl">
@@ -50,14 +12,16 @@ export default function StartPage() {
         </h1>
 
         <p className="mt-4 text-lg text-zinc-300">
-          Strength and conditioning that transfers to rounds.
+          Strength and conditioning that transfers to rounds. 
+          Janurary Launch Access - Free through Jan. 31st!
         </p>
 
         <p className="mt-3 text-sm text-zinc-400 max-w-xl">
-          Short rules and session plans that protect your skill work and keep strength useful when the rounds start.
+          Short rules and session plans that protect your skill work and keep strength useful when the rounds start. This program will be $49 starting Feb 1.
+January access is free while I onboard founding athletes and gather feedback.  
         </p>
 
-        <form onSubmit={handleSubmit} className="mt-6 space-y-4">
+        <form action="/api/start-form" method="POST" className="mt-6 space-y-4">
           <div>
             <label htmlFor="name" className="block text-sm text-zinc-400">
               Name
@@ -92,20 +56,15 @@ export default function StartPage() {
 
           <button
             type="submit"
-            disabled={submitting}
-            className="mt-4 w-full rounded-2xl bg-white py-3 text-base font-medium text-zinc-950 hover:bg-zinc-200 shadow-sm disabled:opacity-60"
+            className="mt-4 w-full rounded-2xl bg-white py-3 text-base font-medium text-zinc-950 hover:bg-zinc-200 shadow-sm"
           >
-            {submitting ? "Sending…" : "Send me the blueprint"}
+            Send me the blueprint
           </button>
         </form>
 
-        {error ? (
-          <p className="mt-4 text-sm text-red-400">{error}</p>
-        ) : (
-          <p className="mt-4 text-xs text-zinc-500">
-            No spam. One follow-up message only.
-          </p>
-        )}
+        <p className="mt-4 text-xs text-zinc-500">
+          No spam. One follow-up message only.
+        </p>
       </div>
     </main>
   );

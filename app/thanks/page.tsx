@@ -60,7 +60,7 @@ export default function ThanksPage() {
         <div className="mt-10 rounded-2xl border border-zinc-800 bg-zinc-900/30 p-6">
           <h2 className="text-lg font-semibold">Want help implementing it?</h2>
           <p className="mt-2 text-sm text-zinc-300">
-            Reply “ROUND-READY” with your sport (MMA/boxing/BJJ/wrestling) and I’ll tell you the
+            DM me “ROUND-READY” with your sport (MMA/Muay Thai/BJJ/wrestling) and I’ll tell you the
             fastest way to apply this to your week.
           </p>
         </div>
