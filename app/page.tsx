@@ -26,13 +26,13 @@ export default function HomePage() {
       <section className="relative min-h-screen flex items-center">
 
         {/* Background image — faded right side */}
-        <div className="absolute inset-0 z-0">
+        <div className="absolute inset-0 z-0 bg-[#111111]">
           {/* Mobile background */}
           <Image
             src="/HERO.jpeg"
             alt="Jake Peterson"
             fill
-            className="block md:hidden object-cover object-center"
+            className="block md:hidden object-contain"
             priority
           />
           {/* Desktop background */}
