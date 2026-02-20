@@ -29,7 +29,7 @@ export default function HomePage() {
         <div className="absolute inset-0 z-0">
           {/* Mobile background */}
           <Image
-            src="/HERO.jpg"
+            src="/HERO.jpeg"
             alt="Jake Peterson"
             fill
             className="block md:hidden object-cover object-center"
