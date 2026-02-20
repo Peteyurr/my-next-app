@@ -27,14 +27,22 @@ export default function HomePage() {
 
         {/* Background image — faded right side */}
         <div className="absolute inset-0 z-0">
+          {/* Mobile background */}
           <Image
-  src="/HIGH_TEEP.jpeg"
-  alt="Jake Peterson throwing a teep kick"
-  fill
-  className="object-cover"
-  style={{ objectPosition: "35% top" }}
-  priority
-/>
+            src="/about/training.jpg"
+            alt="Jake Peterson training"
+            fill
+            className="block md:hidden object-cover object-center"
+            priority
+          />
+          {/* Desktop background */}
+          <Image
+            src="/HIGH_TEEP.jpeg"
+            alt="Jake Peterson throwing a teep kick"
+            fill
+            className="hidden md:block object-cover object-center"
+            priority
+          />
           {/* Dark overlay — heavy left, lighter right */}
           <div className="absolute inset-0 bg-gradient-to-r from-[#111111] via-[#111111]/85 to-[#111111]/40" />
           {/* Bottom fade */}
