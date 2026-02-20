@@ -50,7 +50,7 @@ export default function HomePage() {
         </div>
 
         {/* Content */}
-        <div className="relative z-10 mx-auto max-w-7xl px-6 md:px-12 lg:px-16 pt-32 pb-40 w-full">
+        <div className="relative z-10 mx-auto max-w-7xl px-6 md:px-12 lg:px-16 pt-20 md:pt-32 pb-24 md:pb-40 w-full">
           <div className="max-w-2xl">
 
             {/* Eyebrow */}
@@ -105,7 +105,7 @@ export default function HomePage() {
       {/* ============================================================
           WHO THIS IS FOR — Dark card row
       ============================================================ */}
-      <section className="mx-auto max-w-7xl px-6 md:px-12 lg:px-16 py-20">
+      <section className="mx-auto max-w-7xl px-6 md:px-12 lg:px-16 py-10 md:py-20">
         <p className="text-xs uppercase tracking-[0.2em] text-zinc-500 mb-8">Who this is for</p>
         <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
           {[
@@ -130,7 +130,7 @@ export default function HomePage() {
       {/* ============================================================
           COMING SOON TEASER — Combat Sports S&C
       ============================================================ */}
-      <section className="mx-auto max-w-7xl px-6 md:px-12 lg:px-16 py-16">
+      <section className="mx-auto max-w-7xl px-6 md:px-12 lg:px-16 py-8 md:py-16">
         <div className="rounded-3xl border border-[#C2581F]/20 bg-zinc-900/60 overflow-hidden">
           {/* Photo banner */}
           <div className="relative aspect-[4/3] sm:aspect-[21/9] md:aspect-[3/1]">
@@ -203,8 +203,8 @@ export default function HomePage() {
       {/* ============================================================
           THREE PATHS
       ============================================================ */}
-      <section className="mx-auto max-w-7xl px-6 md:px-12 lg:px-16 py-24">
-        <div className="flex items-end justify-between mb-12">
+      <section className="mx-auto max-w-7xl px-6 md:px-12 lg:px-16 py-12 md:py-24">
+        <div className="flex items-end justify-between mb-8 md:mb-12">
           <h2
             className="text-3xl md:text-5xl font-black uppercase text-white"
             style={{ fontFamily: "Oswald, sans-serif" }}
@@ -241,7 +241,7 @@ export default function HomePage() {
       {/* ============================================================
           SPLIT SECTION — Jake in gym with gloves
       ============================================================ */}
-      <section className="mx-auto max-w-7xl px-6 md:px-12 lg:px-16 py-16">
+      <section className="mx-auto max-w-7xl px-6 md:px-12 lg:px-16 py-8 md:py-16">
         <div className="grid lg:grid-cols-2 gap-0 rounded-3xl overflow-hidden border border-zinc-800">
           {/* Image */}
           <div className="relative h-80 lg:h-auto min-h-[400px]">
@@ -276,8 +276,8 @@ export default function HomePage() {
       {/* ============================================================
           TESTIMONIALS
       ============================================================ */}
-      <section className="mx-auto max-w-7xl px-6 md:px-12 lg:px-16 py-24">
-        <div className="flex items-end justify-between mb-12">
+      <section className="mx-auto max-w-7xl px-6 md:px-12 lg:px-16 py-12 md:py-24">
+        <div className="flex items-end justify-between mb-8 md:mb-12">
           <h2
             className="text-3xl md:text-5xl font-black uppercase text-white"
             style={{ fontFamily: "Oswald, sans-serif" }}
@@ -371,7 +371,7 @@ export default function HomePage() {
       {/* ============================================================
           VALUE PROP — 3 column
       ============================================================ */}
-      <section className="mx-auto max-w-7xl px-6 md:px-12 lg:px-16 py-24">
+      <section className="mx-auto max-w-7xl px-6 md:px-12 lg:px-16 py-12 md:py-24">
         <div className="grid gap-6 md:grid-cols-3">
           <div className="rounded-3xl border border-zinc-800 bg-zinc-900/50 p-8">
             <h2
@@ -422,7 +422,7 @@ export default function HomePage() {
       {/* ============================================================
           FINAL CTA — Full bleed with sidekick photo
       ============================================================ */}
-      <section className="relative overflow-hidden mx-6 md:mx-12 lg:mx-16 rounded-3xl mb-16">
+      <section className="relative overflow-hidden mx-6 md:mx-12 lg:mx-16 rounded-3xl mb-8 md:mb-16">
         <div className="absolute inset-0">
           <Image
             src="/SidekickDG.jpeg"
