@@ -23,7 +23,7 @@ export default function HomePage() {
       {/* ============================================================
           HERO — Full bleed image, split layout
       ============================================================ */}
-      <section className="relative min-h-screen flex items-center">
+      <section className="relative min-h-[85vh] md:min-h-screen flex items-center">
 
         {/* Background image — faded right side */}
         <div className="absolute inset-0 z-0 bg-[#111111]">
@@ -203,7 +203,7 @@ export default function HomePage() {
       {/* ============================================================
           THREE PATHS
       ============================================================ */}
-      <section className="mx-auto max-w-7xl px-6 md:px-12 lg:px-16 py-12 md:py-24">
+      <section className="mx-auto max-w-7xl px-6 md:px-12 lg:px-16 py-8 md:py-24">
         <div className="flex items-end justify-between mb-8 md:mb-12">
           <h2
             className="text-3xl md:text-5xl font-black uppercase text-white"
@@ -276,7 +276,7 @@ export default function HomePage() {
       {/* ============================================================
           TESTIMONIALS
       ============================================================ */}
-      <section className="mx-auto max-w-7xl px-6 md:px-12 lg:px-16 py-12 md:py-24">
+      <section className="mx-auto max-w-7xl px-6 md:px-12 lg:px-16 py-8 md:py-24">
         <div className="flex items-end justify-between mb-8 md:mb-12">
           <h2
             className="text-3xl md:text-5xl font-black uppercase text-white"
@@ -371,7 +371,7 @@ export default function HomePage() {
       {/* ============================================================
           VALUE PROP — 3 column
       ============================================================ */}
-      <section className="mx-auto max-w-7xl px-6 md:px-12 lg:px-16 py-12 md:py-24">
+      <section className="mx-auto max-w-7xl px-6 md:px-12 lg:px-16 py-8 md:py-24">
         <div className="grid gap-6 md:grid-cols-3">
           <div className="rounded-3xl border border-zinc-800 bg-zinc-900/50 p-8">
             <h2
