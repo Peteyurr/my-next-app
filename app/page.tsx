@@ -125,9 +125,9 @@ export default function HomePage() {
       <section className="mx-auto max-w-7xl px-6 md:px-12 lg:px-16 py-16">
         <div className="rounded-3xl border border-[#C2581F]/20 bg-zinc-900/60 overflow-hidden">
           {/* Photo banner */}
-          <div className="relative aspect-[21/9] md:aspect-[3/1]">
-            <div className="absolute inset-0 grid grid-cols-2 gap-0">
-              <div className="relative border-r-[3px] border-[#C2581F]">
+          <div className="relative aspect-[4/3] sm:aspect-[21/9] md:aspect-[3/1]">
+            <div className="absolute inset-0 grid grid-cols-1 sm:grid-cols-2 gap-0">
+              <div className="relative sm:border-r-[3px] border-b-[3px] sm:border-b-0 border-[#C2581F]">
                 <Image
                   src="/Cross.jpeg"
                   alt="Muay Thai cross punch"
@@ -154,7 +154,7 @@ export default function HomePage() {
           </div>
 
           {/* Text content + email capture */}
-          <div className="p-8 md:p-10">
+          <div className="p-6 md:p-10">
             <h2
               className="text-3xl md:text-4xl font-black uppercase text-white"
               style={{ fontFamily: "Oswald, sans-serif" }}
@@ -198,7 +198,7 @@ export default function HomePage() {
       <section className="mx-auto max-w-7xl px-6 md:px-12 lg:px-16 py-24">
         <div className="flex items-end justify-between mb-12">
           <h2
-            className="text-4xl md:text-5xl font-black uppercase text-white"
+            className="text-3xl md:text-5xl font-black uppercase text-white"
             style={{ fontFamily: "Oswald, sans-serif" }}
           >
             Start here.
@@ -247,10 +247,10 @@ export default function HomePage() {
           </div>
 
           {/* Text */}
-          <div className="bg-zinc-900/80 p-10 md:p-14 flex flex-col justify-center">
+          <div className="bg-zinc-900/80 p-6 md:p-14 flex flex-col justify-center">
             <p className="text-xs uppercase tracking-[0.2em] text-[#C2581F] mb-4">The standard</p>
             <h2
-              className="text-4xl md:text-5xl font-black uppercase text-white leading-tight mb-6"
+              className="text-3xl md:text-5xl font-black uppercase text-white leading-tight mb-6"
               style={{ fontFamily: "Oswald, sans-serif" }}
             >
               If it doesn't transfer, cut it.
@@ -271,7 +271,7 @@ export default function HomePage() {
       <section className="mx-auto max-w-7xl px-6 md:px-12 lg:px-16 py-24">
         <div className="flex items-end justify-between mb-12">
           <h2
-            className="text-4xl md:text-5xl font-black uppercase text-white"
+            className="text-3xl md:text-5xl font-black uppercase text-white"
             style={{ fontFamily: "Oswald, sans-serif" }}
           >
             Real results.
@@ -426,10 +426,10 @@ export default function HomePage() {
           <div className="absolute inset-0 bg-gradient-to-t from-[#111111] via-[#111111]/60 to-transparent" />
         </div>
 
-        <div className="relative z-10 p-12 md:p-20 text-center">
+        <div className="relative z-10 p-8 md:p-20 text-center">
           <p className="text-xs uppercase tracking-[0.3em] text-[#C2581F] mb-4">Built for Performance</p>
           <h3
-            className="text-5xl md:text-7xl font-black uppercase text-white leading-tight"
+            className="text-3xl sm:text-5xl md:text-7xl font-black uppercase text-white leading-tight"
             style={{ fontFamily: "Oswald, sans-serif" }}
           >
             Build capability.

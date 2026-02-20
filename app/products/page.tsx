@@ -61,7 +61,7 @@ export default function ComingSoonPage() {
 
         {/* Headline */}
         <h1
-          className="text-6xl md:text-8xl font-black uppercase leading-[0.9] tracking-tight"
+          className="text-5xl md:text-8xl font-black uppercase leading-[0.9] tracking-tight"
           style={{ fontFamily: "Oswald, sans-serif" }}
         >
           <span className="text-white block">Combat Sports</span>
@@ -74,9 +74,9 @@ export default function ComingSoonPage() {
         </p>
 
         {/* Product Cover Banner */}
-        <div className="relative mt-12 aspect-[16/9] rounded-3xl overflow-hidden">
-          <div className="absolute inset-0 grid grid-cols-2 gap-0">
-            <div className="relative border-r-[3px] border-[#C2581F]">
+        <div className="relative mt-12 aspect-[3/4] sm:aspect-[16/9] rounded-3xl overflow-hidden">
+          <div className="absolute inset-0 grid grid-cols-1 sm:grid-cols-2 gap-0">
+            <div className="relative sm:border-r-[3px] border-b-[3px] sm:border-b-0 border-[#C2581F]">
               <Image
                 src="/Cross.jpeg"
                 alt="Muay Thai cross punch"
@@ -101,7 +101,7 @@ export default function ComingSoonPage() {
           {/* Title overlay */}
           <div className="absolute inset-0 flex items-center justify-center">
             <h2
-              className="text-4xl md:text-5xl lg:text-6xl font-black uppercase text-white tracking-tight drop-shadow-lg text-center leading-tight"
+              className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-black uppercase text-white tracking-tight drop-shadow-lg text-center leading-tight"
               style={{ fontFamily: "Oswald, sans-serif" }}
             >
               Combat Sports<br />S&C

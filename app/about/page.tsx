@@ -97,7 +97,7 @@ export default function AboutPage() {
               </p>
 
               <h1
-                className="text-6xl md:text-7xl lg:text-8xl font-black uppercase leading-[0.9] tracking-tight text-white"
+                className="text-5xl md:text-7xl lg:text-8xl font-black uppercase leading-[0.9] tracking-tight text-white"
                 style={{ fontFamily: "Oswald, sans-serif" }}
               >
                 Jake<br />
@@ -127,7 +127,7 @@ export default function AboutPage() {
             <div className="order-2 lg:order-1">
               <p className="text-xs uppercase tracking-[0.2em] text-[#C2581F] mb-4">Chapter 01</p>
               <h2
-                className="text-4xl md:text-5xl font-black uppercase text-white leading-tight mb-8"
+                className="text-3xl md:text-5xl font-black uppercase text-white leading-tight mb-8"
                 style={{ fontFamily: "Oswald, sans-serif" }}
               >
                 Movement<br />is Magic
@@ -196,7 +196,7 @@ export default function AboutPage() {
             <div className="order-2">
               <p className="text-xs uppercase tracking-[0.2em] text-[#C2581F] mb-4">Chapter 02</p>
               <h2
-                className="text-4xl md:text-5xl font-black uppercase text-white leading-tight mb-8"
+                className="text-3xl md:text-5xl font-black uppercase text-white leading-tight mb-8"
                 style={{ fontFamily: "Oswald, sans-serif" }}
               >
                 The Weight<br />Room
@@ -238,7 +238,7 @@ export default function AboutPage() {
             <div className="order-2 lg:order-1">
               <p className="text-xs uppercase tracking-[0.2em] text-[#C2581F] mb-4">Chapter 03</p>
               <h2
-                className="text-4xl md:text-5xl font-black uppercase text-white leading-tight mb-2"
+                className="text-3xl md:text-5xl font-black uppercase text-white leading-tight mb-2"
                 style={{ fontFamily: "Oswald, sans-serif" }}
               >
                 Muay Thai
@@ -293,10 +293,10 @@ export default function AboutPage() {
       ============================================================ */}
       <section className="mx-auto max-w-7xl px-6 md:px-12 lg:px-16 pb-24">
         <AnimatedSection>
-          <div className="rounded-3xl border border-zinc-800 bg-zinc-900/40 p-10 md:p-16 text-center">
+          <div className="rounded-3xl border border-zinc-800 bg-zinc-900/40 p-6 md:p-16 text-center">
             <p className="text-xs uppercase tracking-[0.2em] text-[#C2581F] mb-6">What I Believe</p>
             <blockquote
-              className="text-3xl md:text-4xl font-black uppercase text-white leading-tight max-w-4xl mx-auto"
+              className="text-2xl md:text-4xl font-black uppercase text-white leading-tight max-w-4xl mx-auto"
               style={{ fontFamily: "Oswald, sans-serif" }}
             >
               I'm not a pro fighter. I'm not a wannabe "gymshark" athelete.
@@ -316,7 +316,7 @@ export default function AboutPage() {
       ============================================================ */}
       <section className="mx-auto max-w-7xl px-6 md:px-12 lg:px-16 pb-24">
         <AnimatedSection>
-          <div className="relative rounded-3xl border border-zinc-800 bg-zinc-950/80 p-10 md:p-16">
+          <div className="relative rounded-3xl border border-zinc-800 bg-zinc-950/80 p-6 md:p-16">
             <div className="absolute inset-0 bg-gradient-to-r from-[#C2581F]/5 via-transparent to-[#C2581F]/5 rounded-3xl" />
             <p className="text-xs uppercase tracking-[0.2em] text-[#C2581F] mb-4 relative">My Philosophy</p>
             <p className="text-xl md:text-2xl text-zinc-200 leading-relaxed italic relative">
@@ -362,9 +362,9 @@ export default function AboutPage() {
       ============================================================ */}
       <section className="mx-auto max-w-7xl px-6 md:px-12 lg:px-16 pb-28">
         <AnimatedSection>
-          <div className="rounded-3xl border border-zinc-800 bg-gradient-to-b from-zinc-900/70 to-zinc-950/70 p-12 md:p-16 text-center">
+          <div className="rounded-3xl border border-zinc-800 bg-gradient-to-b from-zinc-900/70 to-zinc-950/70 p-8 md:p-16 text-center">
             <h3
-              className="text-4xl md:text-5xl font-black uppercase text-white"
+              className="text-3xl md:text-5xl font-black uppercase text-white"
               style={{ fontFamily: "Oswald, sans-serif" }}
             >
               Ready to train<br />

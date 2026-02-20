@@ -41,7 +41,7 @@ export default function CoachingPage() {
           1:1 Coaching
         </p>
         <h1
-          className="text-6xl md:text-7xl font-black uppercase leading-[0.9] tracking-tight text-white"
+          className="text-5xl md:text-7xl font-black uppercase leading-[0.9] tracking-tight text-white"
           style={{ fontFamily: "Oswald, sans-serif" }}
         >
           Built around<br />
@@ -141,7 +141,7 @@ export default function CoachingPage() {
 
           {/* Right — Calendar */}
           <div>
-            <div className="rounded-3xl border border-zinc-800 bg-zinc-900/50 p-8 sticky top-8">
+            <div className="rounded-3xl border border-zinc-800 bg-zinc-900/50 p-4 sm:p-8 sticky top-8">
               <h2
                 className="text-3xl font-black uppercase text-white mb-2"
                 style={{ fontFamily: "Oswald, sans-serif" }}
@@ -150,7 +150,7 @@ export default function CoachingPage() {
               </h2>
               <p className="text-zinc-500 text-sm mb-6">Free. 30 minutes. No obligation.</p>
 
-              <div style={{ minWidth: "320px", height: "700px" }}>
+              <div style={{ minWidth: 0, height: "700px" }} className="overflow-x-auto">
                 <iframe
                   src="https://calendly.com/jake24peterson/30min?embed_type=Inline&hide_landing_page_details=1&hide_gdpr_banner=1"
                   width="100%"
@@ -167,7 +167,7 @@ export default function CoachingPage() {
 
       {/* Bottom CTA strip */}
       <section className="mx-auto max-w-7xl px-6 md:px-12 lg:px-16 pb-24">
-        <div className="rounded-3xl border border-zinc-800 bg-zinc-900/40 p-10 text-center">
+        <div className="rounded-3xl border border-zinc-800 bg-zinc-900/40 p-6 md:p-10 text-center">
           <p className="text-zinc-500 text-sm uppercase tracking-widest mb-3">Have questions?</p>
           <h3
             className="text-3xl font-black uppercase text-white mb-4"

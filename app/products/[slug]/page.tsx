@@ -84,10 +84,10 @@ export default async function ProductPage({ params }: ProductPageProps) {
 
         <div className="grid gap-12 lg:grid-cols-2">
           {/* Product Hero Banner */}
-          <div className="relative aspect-square rounded-3xl overflow-hidden">
+          <div className="relative aspect-[3/4] sm:aspect-square rounded-3xl overflow-hidden">
             {/* Side-by-side photos */}
-            <div className="absolute inset-0 grid grid-cols-2 gap-0">
-              <div className="relative border-r-[3px] border-[#C2581F]">
+            <div className="absolute inset-0 grid grid-cols-1 sm:grid-cols-2 gap-0">
+              <div className="relative sm:border-r-[3px] border-b-[3px] sm:border-b-0 border-[#C2581F]">
                 <Image
                   src="/Jiujitsu.jpeg"
                   alt="Jiujitsu training"
@@ -124,7 +124,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
               {product.category}
             </span>
 
-            <h1 className="text-4xl md:text-5xl font-bold tracking-tight">
+            <h1 className="text-3xl md:text-5xl font-bold tracking-tight">
               {product.name}
             </h1>
 
