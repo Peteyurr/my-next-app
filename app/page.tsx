@@ -29,12 +29,10 @@ export default function HomePage() {
         <div className="absolute inset-0 z-0">
           {/* Mobile background */}
           <Image
-            src="/about/training.jpg"
-            alt="Jake Peterson training"
+            src="/HERO.jpg"
+            alt="Jake Peterson"
             fill
-            className="block md:hidden object-cover"
-            style={{ objectPosition: "80% 10%" }}
-            unoptimized
+            className="block md:hidden object-cover object-center"
             priority
           />
           {/* Desktop background */}
