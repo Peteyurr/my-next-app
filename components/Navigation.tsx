@@ -89,7 +89,7 @@ export default function Navigation({
       )}
 
       {/* Main Navigation */}
-      <header className="sticky top-0 z-20 backdrop-blur supports-[backdrop-filter]:bg-zinc-950/70 border-b border-zinc-800/60">
+      <header className="sticky top-0 z-20 bg-[#111111] border-b border-zinc-800/60">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
           <Link href="/" className="flex items-center">
             <Image
@@ -147,7 +147,7 @@ export default function Navigation({
 
         {/* Mobile Menu */}
         {mobileMenuOpen && (
-          <nav className="md:hidden border-t border-zinc-800/60 bg-zinc-950/95 backdrop-blur">
+          <nav className="md:hidden border-t border-zinc-800/60 bg-[#111111]">
             <div className="flex flex-col gap-4 px-6 py-6">
               <Link
                 href="/"
