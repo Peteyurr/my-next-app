@@ -31,8 +31,7 @@ export default function HomePage() {
   src="/HIGH_TEEP.jpeg"
   alt="Jake Peterson throwing a teep kick"
   fill
-  className="object-cover"
-  style={{ objectPosition: "10% 90%" }}
+  className="object-cover object-[35%_top] md:object-[10%_90%]"
   priority
 />
           {/* Dark overlay — heavy left, lighter right */}
