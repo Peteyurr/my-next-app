@@ -76,7 +76,7 @@ export default function AboutPage() {
             {/* Headshot */}
             <div className="flex justify-center lg:justify-start order-1">
               <div className="relative group">
-                <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-3xl overflow-hidden border-2 border-zinc-800 shadow-2xl shadow-orange-900/20 transition-all duration-300 group-hover:scale-[1.02] group-hover:border-[#C2581F]/50">
+                <div className="relative w-48 h-48 md:w-80 md:h-80 rounded-3xl overflow-hidden border-2 border-zinc-800 shadow-2xl shadow-orange-900/20 transition-all duration-300 group-hover:scale-[1.02] group-hover:border-[#C2581F]/50">
                   <Image
                     src="/about/headshot.jpg"
                     alt="Jake Peterson"
@@ -85,7 +85,7 @@ export default function AboutPage() {
                     priority
                   />
                 </div>
-                <div className="absolute -bottom-4 -right-4 w-64 h-64 md:w-80 md:h-80 rounded-3xl border border-[#C2581F]/20 -z-10" />
+                <div className="absolute -bottom-4 -right-4 w-48 h-48 md:w-80 md:h-80 rounded-3xl border border-[#C2581F]/20 -z-10" />
               </div>
             </div>
 
@@ -119,7 +119,7 @@ export default function AboutPage() {
       {/* ============================================================
           ARC 1 — Movement is Magic
       ============================================================ */}
-      <section className="mx-auto max-w-7xl px-6 md:px-12 lg:px-16 pb-28">
+      <section className="mx-auto max-w-7xl px-6 md:px-12 lg:px-16 pb-12 md:pb-28">
         <AnimatedSection>
           <div className="grid gap-12 lg:grid-cols-2 lg:gap-16 items-center">
 
@@ -173,7 +173,7 @@ export default function AboutPage() {
       {/* ============================================================
           ARC 2 — The Weight Room
       ============================================================ */}
-      <section className="mx-auto max-w-7xl px-6 md:px-12 lg:px-16 pb-28">
+      <section className="mx-auto max-w-7xl px-6 md:px-12 lg:px-16 pb-12 md:pb-28">
         <AnimatedSection>
           <div className="grid gap-12 lg:grid-cols-2 lg:gap-16 items-center">
 
@@ -230,7 +230,7 @@ export default function AboutPage() {
       {/* ============================================================
           ARC 3 — Muay Thai
       ============================================================ */}
-      <section className="mx-auto max-w-7xl px-6 md:px-12 lg:px-16 pb-28">
+      <section className="mx-auto max-w-7xl px-6 md:px-12 lg:px-16 pb-12 md:pb-28">
         <AnimatedSection>
           <div className="grid gap-12 lg:grid-cols-2 lg:gap-16 items-center">
 
@@ -360,7 +360,7 @@ export default function AboutPage() {
       {/* ============================================================
           FINAL CTA
       ============================================================ */}
-      <section className="mx-auto max-w-7xl px-6 md:px-12 lg:px-16 pb-28">
+      <section className="mx-auto max-w-7xl px-6 md:px-12 lg:px-16 pb-12 md:pb-28">
         <AnimatedSection>
           <div className="rounded-3xl border border-zinc-800 bg-gradient-to-b from-zinc-900/70 to-zinc-950/70 p-8 md:p-16 text-center">
             <h3

@@ -24,16 +24,6 @@ export default function CoachingPage() {
 
       <Navigation ctaText="Book a Call" ctaHref="/coaching" />
 
-      {/* Availability banner */}
-      <section className="mx-auto max-w-7xl px-6 md:px-12 lg:px-16 pt-8">
-        <div className="rounded-2xl border border-[#C2581F]/30 bg-[#C2581F]/10 px-6 py-4 text-center">
-          <p className="text-sm text-zinc-200">
-            <span className="font-bold text-[#C2581F]">Limited spots available for February</span>
-            {" "}— Book your call to secure yours
-          </p>
-        </div>
-      </section>
-
       {/* Hero */}
       <section className="mx-auto max-w-7xl px-6 md:px-12 lg:px-16 pt-16 pb-8">
         <p className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.25em] text-[#C2581F] font-semibold mb-6">
@@ -150,12 +140,12 @@ export default function CoachingPage() {
               </h2>
               <p className="text-zinc-500 text-sm mb-6">Free. 30 minutes. No obligation.</p>
 
-              <div style={{ minWidth: 0, height: "700px" }} className="overflow-x-auto">
+              <div className="h-[500px] md:h-[700px] overflow-x-auto">
                 <iframe
                   src="https://calendly.com/jake24peterson/30min?embed_type=Inline&hide_landing_page_details=1&hide_gdpr_banner=1"
                   width="100%"
-                  height="700"
-                  frameBorder="0"
+                  height="100%"
+                  style={{ border: 0 }}
                   title="Book a Strategy Call"
                 />
               </div>
