@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Navigation from "@/components/Navigation";
+import FadeIn from "@/components/FadeIn";
 
 export const metadata = {
   title: "You're All Set! — Built for Performance",
@@ -18,6 +19,7 @@ export default function ProductThankYouPage() {
       <Navigation showBanner={false} ctaText="Book a Call" ctaHref="/coaching" />
 
       <section className="mx-auto max-w-2xl px-6 pt-20 pb-24">
+        <FadeIn>
         {/* Success Icon */}
         <div className="mx-auto mb-8 flex h-20 w-20 items-center justify-center rounded-full bg-emerald-500/10 border border-emerald-500/20">
           <svg
@@ -43,8 +45,10 @@ export default function ProductThankYouPage() {
           Check your email (including spam) for your download link. You'll
           receive it within 5 minutes.
         </p>
+        </FadeIn>
 
         {/* What's Next */}
+        <FadeIn delay={100}>
         <div className="mt-10 rounded-2xl border border-zinc-800 bg-zinc-900/50 p-6">
           <h2 className="font-semibold text-white mb-4">What's next:</h2>
           <ul className="space-y-3 text-zinc-300">
@@ -62,8 +66,10 @@ export default function ProductThankYouPage() {
             </li>
           </ul>
         </div>
+        </FadeIn>
 
         {/* Coaching Upsell */}
+        <FadeIn delay={200}>
         <div className="mt-10 rounded-3xl border border-indigo-500/30 bg-gradient-to-b from-indigo-500/10 to-transparent p-8">
           <p className="text-xs font-semibold uppercase tracking-wider text-indigo-400 mb-3">
             Take It Further
@@ -84,6 +90,7 @@ export default function ProductThankYouPage() {
             Apply for coaching
           </Link>
         </div>
+        </FadeIn>
 
         {/* Support */}
         <div className="mt-10 text-center">

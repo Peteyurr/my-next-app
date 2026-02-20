@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Navigation from "@/components/Navigation";
+import FadeIn from "@/components/FadeIn";
 import { useState } from "react";
 
 export default function ComingSoonPage() {
@@ -53,6 +54,7 @@ export default function ComingSoonPage() {
       {/* Coming Soon Content */}
       <section className="mx-auto max-w-3xl px-6 md:px-12 lg:px-16 pt-20 pb-32 text-center">
 
+        <FadeIn>
         {/* Badge */}
         <span className="inline-flex items-center gap-2 rounded-full border border-[#C2581F]/30 bg-[#C2581F]/10 px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-[#C2581F] mb-8">
           <span className="h-1.5 w-1.5 rounded-full bg-[#C2581F] animate-pulse" />
@@ -72,8 +74,10 @@ export default function ComingSoonPage() {
         <p className="mt-8 text-lg md:text-xl text-zinc-400 max-w-xl mx-auto leading-relaxed">
           An 8-week strength and conditioning system built specifically for combat athletes. Dropping soon.
         </p>
+        </FadeIn>
 
         {/* Product Cover Banner */}
+        <FadeIn>
         <div className="relative mt-12 aspect-[3/4] sm:aspect-[16/9] rounded-3xl overflow-hidden">
           <div className="absolute inset-0 grid grid-cols-1 sm:grid-cols-2 gap-0">
             <div className="relative sm:border-r-[3px] border-b-[3px] sm:border-b-0 border-[#C2581F]">
@@ -112,8 +116,10 @@ export default function ComingSoonPage() {
             Coming Soon
           </span>
         </div>
+        </FadeIn>
 
         {/* Email Capture */}
+        <FadeIn>
         <div className="mt-12 max-w-md mx-auto">
           {status === "success" ? (
             <div className="rounded-2xl border border-[#C2581F]/30 bg-[#C2581F]/10 p-6">
@@ -161,6 +167,7 @@ export default function ComingSoonPage() {
         >
           Book a Call
         </a>
+        </FadeIn>
       </section>
 
     </main>

@@ -1,5 +1,6 @@
 import Navigation from "@/components/Navigation";
 import Image from "next/image";
+import FadeIn from "@/components/FadeIn";
 
 
 export default function CoachingPage() {
@@ -26,24 +27,27 @@ export default function CoachingPage() {
 
       {/* Hero */}
       <section className="mx-auto max-w-7xl px-6 md:px-12 lg:px-16 pt-16 pb-8">
-        <p className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.25em] text-[#C2581F] font-semibold mb-6">
-          <span className="h-px w-8 bg-[#C2581F]" />
-          1:1 Coaching
-        </p>
-        <h1
-          className="text-5xl md:text-7xl font-black uppercase leading-[0.9] tracking-tight text-white"
-          style={{ fontFamily: "Oswald, sans-serif" }}
-        >
-          Built around<br />
-          <span className="text-[#C2581F]">your life.</span>
-        </h1>
-        <p className="mt-6 text-lg text-zinc-400 max-w-xl leading-relaxed">
-          Custom programming that adapts to your schedule, your sport, and your recovery. Not a template. A direct line to training that actually fits.
-        </p>
+        <FadeIn>
+          <p className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.25em] text-[#C2581F] font-semibold mb-6">
+            <span className="h-px w-8 bg-[#C2581F]" />
+            1:1 Coaching
+          </p>
+          <h1
+            className="text-5xl md:text-7xl font-black uppercase leading-[0.9] tracking-tight text-white"
+            style={{ fontFamily: "Oswald, sans-serif" }}
+          >
+            Built around<br />
+            <span className="text-[#C2581F]">your life.</span>
+          </h1>
+          <p className="mt-6 text-lg text-zinc-400 max-w-xl leading-relaxed">
+            Custom programming that adapts to your schedule, your sport, and your recovery. Not a template. A direct line to training that actually fits.
+          </p>
+        </FadeIn>
       </section>
 
       {/* Calendar — directly after hero */}
       <section className="mx-auto max-w-3xl px-6 md:px-12 lg:px-16 py-8">
+        <FadeIn>
         <div className="rounded-3xl border border-zinc-800 bg-zinc-900/50 p-4 sm:p-8">
           <h2
             className="text-3xl font-black uppercase text-white mb-2"
@@ -63,6 +67,7 @@ export default function CoachingPage() {
             />
           </div>
         </div>
+        </FadeIn>
       </section>
 
       {/* Info sections */}
@@ -70,7 +75,8 @@ export default function CoachingPage() {
         <div className="grid gap-10 lg:grid-cols-2">
 
           {/* What you get */}
-          <div className="rounded-3xl border border-zinc-800 bg-zinc-900/50 p-8">
+          <FadeIn delay={0}>
+          <div className="rounded-3xl border border-zinc-800 bg-zinc-900/50 p-8 h-full">
             <h3
               className="text-2xl font-black uppercase text-white mb-6"
               style={{ fontFamily: "Oswald, sans-serif" }}
@@ -91,9 +97,11 @@ export default function CoachingPage() {
               ))}
             </ul>
           </div>
+          </FadeIn>
 
           {/* What the call looks like */}
-          <div className="rounded-3xl border border-zinc-800 bg-zinc-900/50 p-8">
+          <FadeIn delay={150}>
+          <div className="rounded-3xl border border-zinc-800 bg-zinc-900/50 p-8 h-full">
             <h3
               className="text-2xl font-black uppercase text-white mb-6"
               style={{ fontFamily: "Oswald, sans-serif" }}
@@ -117,6 +125,7 @@ export default function CoachingPage() {
               ))}
             </ul>
           </div>
+          </FadeIn>
 
         </div>
       </section>
@@ -124,7 +133,8 @@ export default function CoachingPage() {
       {/* Testimonials */}
       <section className="mx-auto max-w-7xl px-6 md:px-12 lg:px-16 py-8">
         <div className="grid gap-6 md:grid-cols-2">
-          <div className="rounded-3xl border border-zinc-800 bg-zinc-900/40 p-8">
+          <FadeIn delay={0}>
+          <div className="rounded-3xl border border-zinc-800 bg-zinc-900/40 p-8 h-full">
             <div className="flex gap-1 mb-4">
               {[...Array(5)].map((_, i) => <span key={i} className="text-[#C2581F] text-sm">★</span>)}
             </div>
@@ -136,8 +146,10 @@ export default function CoachingPage() {
               <p className="text-xs text-[#C2581F] uppercase tracking-wider mt-1">Runner — VO2 47 → 53 in 3 months</p>
             </div>
           </div>
+          </FadeIn>
 
-          <div className="rounded-3xl border border-zinc-800 bg-zinc-900/40 p-8">
+          <FadeIn delay={150}>
+          <div className="rounded-3xl border border-zinc-800 bg-zinc-900/40 p-8 h-full">
             <div className="flex gap-1 mb-4">
               {[...Array(5)].map((_, i) => <span key={i} className="text-[#C2581F] text-sm">★</span>)}
             </div>
@@ -149,11 +161,13 @@ export default function CoachingPage() {
               <p className="text-xs text-[#C2581F] uppercase tracking-wider mt-1">Muay Thai Competitor</p>
             </div>
           </div>
+          </FadeIn>
         </div>
       </section>
 
       {/* Bottom CTA strip */}
       <section className="mx-auto max-w-7xl px-6 md:px-12 lg:px-16 pb-24">
+        <FadeIn>
         <div className="rounded-3xl border border-zinc-800 bg-zinc-900/40 p-6 md:p-10 text-center">
           <p className="text-zinc-500 text-sm uppercase tracking-widest mb-3">Have questions?</p>
           <h3
@@ -172,6 +186,7 @@ export default function CoachingPage() {
             Book a Call →
           </a>
         </div>
+        </FadeIn>
       </section>
 
     </main>

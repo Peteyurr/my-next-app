@@ -26,6 +26,7 @@ import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 import Navigation from "@/components/Navigation";
+import FadeIn from "@/components/FadeIn";
 import { getProductBySlug, getAllProducts } from "@/lib/products";
 import { CheckoutButton } from "./CheckoutButton";
 
@@ -84,6 +85,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
 
         <div className="grid gap-12 lg:grid-cols-2">
           {/* Product Hero Banner */}
+          <FadeIn>
           <div className="relative aspect-[3/4] sm:aspect-square rounded-3xl overflow-hidden">
             {/* Side-by-side photos */}
             <div className="absolute inset-0 grid grid-cols-1 sm:grid-cols-2 gap-0">
@@ -117,8 +119,10 @@ export default async function ProductPage({ params }: ProductPageProps) {
               </h2>
             </div>
           </div>
+          </FadeIn>
 
           {/* Product Info */}
+          <FadeIn delay={150}>
           <div>
             <span className="inline-block rounded-full bg-zinc-800 px-3 py-1.5 text-xs text-zinc-400 capitalize mb-4">
               {product.category}
@@ -183,6 +187,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
               </ul>
             </div>
           </div>
+          </FadeIn>
         </div>
       </section>
     </main>

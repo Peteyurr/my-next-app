@@ -3,39 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import Navigation from "@/components/Navigation";
-import { useEffect, useRef, useState } from "react";
-
-function useScrollAnimation() {
-  const ref = useRef<HTMLDivElement>(null);
-  const [isVisible, setIsVisible] = useState(false);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) setIsVisible(true);
-      },
-      { threshold: 0.1, rootMargin: "0px 0px -50px 0px" }
-    );
-    if (ref.current) observer.observe(ref.current);
-    return () => observer.disconnect();
-  }, []);
-
-  return { ref, isVisible };
-}
-
-function AnimatedSection({ children, className = "" }: { children: React.ReactNode; className?: string }) {
-  const { ref, isVisible } = useScrollAnimation();
-  return (
-    <div
-      ref={ref}
-      className={`transition-all duration-700 ease-out ${
-        isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-      } ${className}`}
-    >
-      {children}
-    </div>
-  );
-}
+import FadeIn from "@/components/FadeIn";
 
 const credentials = [
   { title: "NASM Certified Personal Trainer", year: "2025" },
@@ -70,7 +38,7 @@ export default function AboutPage() {
           HERO
       ============================================================ */}
       <section className="mx-auto max-w-7xl px-6 md:px-12 lg:px-16 pt-24 pb-24">
-        <AnimatedSection>
+        <FadeIn>
           <div className="grid gap-12 lg:grid-cols-2 lg:gap-16 items-center">
 
             {/* Headshot */}
@@ -113,14 +81,14 @@ export default function AboutPage() {
               </p>
             </div>
           </div>
-        </AnimatedSection>
+        </FadeIn>
       </section>
 
       {/* ============================================================
           ARC 1 — Movement is Magic
       ============================================================ */}
       <section className="mx-auto max-w-7xl px-6 md:px-12 lg:px-16 pb-12 md:pb-28">
-        <AnimatedSection>
+        <FadeIn>
           <div className="grid gap-12 lg:grid-cols-2 lg:gap-16 items-center">
 
             {/* Text */}
@@ -167,14 +135,14 @@ export default function AboutPage() {
               </div>
             </div>
           </div>
-        </AnimatedSection>
+        </FadeIn>
       </section>
 
       {/* ============================================================
           ARC 2 — The Weight Room
       ============================================================ */}
       <section className="mx-auto max-w-7xl px-6 md:px-12 lg:px-16 pb-12 md:pb-28">
-        <AnimatedSection>
+        <FadeIn>
           <div className="grid gap-12 lg:grid-cols-2 lg:gap-16 items-center">
 
             {/* Photo */}
@@ -224,14 +192,14 @@ export default function AboutPage() {
               </div>
             </div>
           </div>
-        </AnimatedSection>
+        </FadeIn>
       </section>
 
       {/* ============================================================
           ARC 3 — Muay Thai
       ============================================================ */}
       <section className="mx-auto max-w-7xl px-6 md:px-12 lg:px-16 pb-12 md:pb-28">
-        <AnimatedSection>
+        <FadeIn>
           <div className="grid gap-12 lg:grid-cols-2 lg:gap-16 items-center">
 
             {/* Text */}
@@ -285,14 +253,14 @@ export default function AboutPage() {
               </div>
             </div>
           </div>
-        </AnimatedSection>
+        </FadeIn>
       </section>
 
       {/* ============================================================
           PHILOSOPHY
       ============================================================ */}
       <section className="mx-auto max-w-7xl px-6 md:px-12 lg:px-16 pb-24">
-        <AnimatedSection>
+        <FadeIn>
           <div className="rounded-3xl border border-zinc-800 bg-zinc-900/40 p-6 md:p-16 text-center">
             <p className="text-xs uppercase tracking-[0.2em] text-[#C2581F] mb-6">What I Believe</p>
             <blockquote
@@ -308,14 +276,14 @@ export default function AboutPage() {
               In life, in sport, whatever it looks like - let's get you there too.
             </p>
           </div>
-        </AnimatedSection>
+        </FadeIn>
       </section>
 
       {/* ============================================================
           PULL QUOTE
       ============================================================ */}
       <section className="mx-auto max-w-7xl px-6 md:px-12 lg:px-16 pb-24">
-        <AnimatedSection>
+        <FadeIn>
           <div className="relative rounded-3xl border border-zinc-800 bg-zinc-950/80 p-6 md:p-16">
             <div className="absolute inset-0 bg-gradient-to-r from-[#C2581F]/5 via-transparent to-[#C2581F]/5 rounded-3xl" />
             <p className="text-xs uppercase tracking-[0.2em] text-[#C2581F] mb-4 relative">My Philosophy</p>
@@ -324,14 +292,14 @@ export default function AboutPage() {
             </p>
             <p className="mt-6 text-[#C2581F] font-bold relative">— Jake Peterson</p>
           </div>
-        </AnimatedSection>
+        </FadeIn>
       </section>
 
       {/* ============================================================
           CREDENTIALS
       ============================================================ */}
       <section className="mx-auto max-w-7xl px-6 md:px-12 lg:px-16 pb-24">
-        <AnimatedSection>
+        <FadeIn>
           <div className="flex items-center justify-center gap-4 mb-10">
             <div className="h-px w-12 bg-[#C2581F]" />
             <h2
@@ -354,14 +322,14 @@ export default function AboutPage() {
               </div>
             ))}
           </div>
-        </AnimatedSection>
+        </FadeIn>
       </section>
 
       {/* ============================================================
           FINAL CTA
       ============================================================ */}
       <section className="mx-auto max-w-7xl px-6 md:px-12 lg:px-16 pb-12 md:pb-28">
-        <AnimatedSection>
+        <FadeIn>
           <div className="rounded-3xl border border-zinc-800 bg-gradient-to-b from-zinc-900/70 to-zinc-950/70 p-8 md:p-16 text-center">
             <h3
               className="text-3xl md:text-5xl font-black uppercase text-white"
@@ -384,7 +352,7 @@ export default function AboutPage() {
               </Link>
             </div>
           </div>
-        </AnimatedSection>
+        </FadeIn>
       </section>
 
     </main>
