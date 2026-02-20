@@ -4,7 +4,7 @@ import Testimonial from "@/components/Testimonial";
 import { getAllProducts } from "@/lib/products";
 
 export const metadata = {
-  title: "Programs — Peteyurr",
+  title: "Programs — Built for Performance",
   description: "Strength programs for people who train with purpose.",
 };
 

@@ -66,7 +66,7 @@ export default function ThanksPage() {
         </div>
 
         <footer className="mt-14 border-t border-zinc-800 pt-8 text-sm text-zinc-400">
-          © 2026 Peteyurr. No-BS training you can actually follow.
+          © 2026 Built for Performance. No-BS training you can actually follow.
         </footer>
       </section>
     </main>

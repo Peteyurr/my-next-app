@@ -7,8 +7,8 @@ const inter = Inter({
 });
 
 export const metadata = {
-  title: "Peteyurr — Combat Strength & Conditioning",
-  description: "Strength + conditioning built for fighters.",
+  title: "Built for Performance — Combat Strength & Conditioning",
+  description: "Strength + conditioning built for athletes who can't afford to be wrecked by their gym sessions.",
 };
 
 export default function RootLayout({

@@ -9,9 +9,14 @@ interface NavigationProps {
   showBanner?: boolean;
 }
 
+/*
+  UPDATE: DEFAULT NAVIGATION CTA
+  The default CTA is "Book a Call" pointing to /coaching.
+  Override these defaults by passing ctaText and ctaHref props.
+*/
 export default function Navigation({
-  ctaText = "Get Started",
-  ctaHref = "/start",
+  ctaText = "Book a Call",
+  ctaHref = "/coaching",
   showBanner = true,
 }: NavigationProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -56,17 +61,17 @@ export default function Navigation({
         their browser data, or you can change the localStorage key name.
       */}
       {showBanner && !bannerDismissed && (
-        <div className="relative bg-zinc-900 border-b border-emerald-500/20">
+        <div className="relative bg-zinc-900 border-b border-[var(--bfp-orange)]/20">
           <div className="mx-auto max-w-7xl px-6 py-2.5 flex items-center justify-center gap-x-4">
             <p className="text-sm text-zinc-300">
-              <span className="inline-block h-1.5 w-1.5 rounded-full bg-emerald-400 mr-2" />
+              <span className="inline-block h-1.5 w-1.5 rounded-full bg-[var(--bfp-orange-light)] mr-2" />
               {/* UPDATE: Change month and message monthly */}
               Limited 1:1 coaching spots available for February
               <Link
                 href="/coaching"
-                className="ml-2 font-medium text-emerald-400 hover:text-emerald-300 transition-colors"
+                className="ml-2 font-medium text-[var(--bfp-orange-light)] hover:text-[var(--bfp-orange)] transition-colors"
               >
-                Apply now →
+                Book your call →
               </Link>
             </p>
             <button
@@ -86,16 +91,19 @@ export default function Navigation({
       <header className="sticky top-0 z-20 backdrop-blur supports-[backdrop-filter]:bg-zinc-950/70 border-b border-zinc-800/60">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
           <Link href="/" className="flex items-center gap-3">
-            <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl border border-zinc-800 bg-zinc-900 text-sm font-semibold">
-              P
+            <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl border border-zinc-800 bg-zinc-900 text-sm font-bold text-[var(--bfp-orange)]">
+              BP
             </span>
-            <span className="font-semibold tracking-tight">Peteyurr</span>
+            <span className="font-semibold tracking-tight">Built for Performance</span>
           </Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-6 text-sm text-zinc-300">
             <Link href="/" className="hover:text-white transition-colors">
               Home
+            </Link>
+            <Link href="/about" className="hover:text-white transition-colors">
+              About
             </Link>
             <Link href="/products" className="hover:text-white transition-colors">
               Products
@@ -145,6 +153,13 @@ export default function Navigation({
                 onClick={() => setMobileMenuOpen(false)}
               >
                 Home
+              </Link>
+              <Link
+                href="/about"
+                className="text-zinc-300 hover:text-white transition-colors"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                About
               </Link>
               <Link
                 href="/products"

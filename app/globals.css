@@ -1,5 +1,11 @@
 @import "tailwindcss";
 
+/* Brand colors */
+:root {
+  --bfp-orange: #C2581F;
+  --bfp-orange-light: #E06A28;
+}
+
 /* Global reset only — Tailwind controls everything else */
 html,
 body {

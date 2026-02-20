@@ -44,7 +44,7 @@ export async function generateMetadata({ params }: ProductPageProps) {
   const product = getProductBySlug(slug);
   if (!product) return { title: "Product Not Found" };
   return {
-    title: `${product.name} — Peteyurr`,
+    title: `${product.name} — Built for Performance`,
     description: product.description,
   };
 }
