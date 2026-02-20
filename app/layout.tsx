@@ -16,6 +16,7 @@ const oswald = Oswald({
 export const metadata = {
   title: "Built for Performance — Combat Strength & Conditioning",
   description: "Strength + conditioning built for athletes who train with purpose.",
+  icons: { icon: "/B_-_8.PNG" },
 };
 
 export default function RootLayout({
