@@ -23,6 +23,7 @@
 */
 
 import { notFound } from "next/navigation";
+import Image from "next/image";
 import Link from "next/link";
 import Navigation from "@/components/Navigation";
 import { getProductBySlug, getAllProducts } from "@/lib/products";
@@ -58,14 +59,14 @@ export default async function ProductPage({ params }: ProductPageProps) {
   }
 
   return (
-    <main className="relative min-h-screen overflow-hidden bg-zinc-950 text-zinc-50">
+    <main className="relative min-h-screen overflow-hidden bg-[#111111] text-zinc-50">
       {/* Ambient gradients */}
       <div className="pointer-events-none absolute inset-0 -z-10">
-        <div className="absolute left-1/2 top-[-200px] h-[520px] w-[520px] -translate-x-1/2 rounded-full bg-indigo-500/10 blur-[120px]" />
-        <div className="absolute bottom-[-220px] right-[-160px] h-[600px] w-[600px] rounded-full bg-emerald-400/10 blur-[140px]" />
+        <div className="absolute left-1/2 top-[-200px] h-[520px] w-[520px] -translate-x-1/2 rounded-full bg-[#C2581F]/10 blur-[120px]" />
+        <div className="absolute bottom-[-220px] right-[-160px] h-[600px] w-[600px] rounded-full bg-[#E06A28]/10 blur-[140px]" />
       </div>
 
-      <Navigation ctaText="Get Started" ctaHref="/start" />
+      <Navigation ctaText="Book a Call" ctaHref="/coaching" />
 
       <section className="mx-auto max-w-7xl px-6 pt-12 pb-24">
         {/* Breadcrumb */}
@@ -82,26 +83,39 @@ export default async function ProductPage({ params }: ProductPageProps) {
         </nav>
 
         <div className="grid gap-12 lg:grid-cols-2">
-          {/*
-            PLACEHOLDER: PRODUCT IMAGE
-            Purpose: Visual representation of the product. Currently shows
-            a placeholder letter - replace with actual product mockup.
-
-            To add real product images:
-            1. Create product mockups (PDF cover, program preview, etc.)
-            2. Save to /public/products/[product-slug].png
-            3. Add 'image' field to Product interface in lib/products.ts
-            4. Replace this div with: <Image src={product.image} ... />
-
-            Recommended image specs:
-            - Square aspect ratio (1:1) works best with current layout
-            - 800x800px minimum for crisp display
-            - PNG or WebP format
-          */}
-          <div className="aspect-square rounded-3xl bg-gradient-to-br from-zinc-800 to-zinc-900 flex items-center justify-center">
-            <span className="text-8xl font-bold text-zinc-700">
-              {product.name.charAt(0)}
-            </span>
+          {/* Product Hero Banner */}
+          <div className="relative aspect-square rounded-3xl overflow-hidden">
+            {/* Side-by-side photos */}
+            <div className="absolute inset-0 grid grid-cols-2 gap-0">
+              <div className="relative border-r-[3px] border-[#C2581F]">
+                <Image
+                  src="/Jiujitsu.jpeg"
+                  alt="Jiujitsu training"
+                  fill
+                  className="object-cover"
+                  priority
+                />
+              </div>
+              <div className="relative">
+                <Image
+                  src="/Cross.jpeg"
+                  alt="Muay Thai cross punch"
+                  fill
+                  className="object-cover"
+                  style={{ objectPosition: "35% center" }}
+                  priority
+                />
+              </div>
+            </div>
+            {/* Dark overlay + title */}
+            <div className="absolute inset-0 bg-black/50 flex items-end p-8">
+              <h2
+                className="text-3xl md:text-4xl font-bold uppercase tracking-wide text-white drop-shadow-lg"
+                style={{ fontFamily: "Oswald, sans-serif" }}
+              >
+                {product.name}
+              </h2>
+            </div>
           </div>
 
           {/* Product Info */}
@@ -135,7 +149,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
               <ul className="space-y-3">
                 {product.features.map((feature, index) => (
                   <li key={index} className="flex items-start gap-3">
-                    <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-emerald-400 flex-shrink-0" />
+                    <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-[#C2581F] flex-shrink-0" />
                     <span className="text-zinc-200">{feature}</span>
                   </li>
                 ))}
@@ -151,7 +165,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
                 {product.includes.map((item, index) => (
                   <li key={index} className="flex items-start gap-3">
                     <svg
-                      className="mt-0.5 h-5 w-5 text-emerald-400 flex-shrink-0"
+                      className="mt-0.5 h-5 w-5 text-[#C2581F] flex-shrink-0"
                       fill="none"
                       viewBox="0 0 24 24"
                       stroke="currentColor"

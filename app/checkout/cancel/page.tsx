@@ -15,7 +15,7 @@ export default function CheckoutCancelPage() {
         <div className="absolute bottom-[-220px] right-[-160px] h-[600px] w-[600px] rounded-full bg-emerald-400/10 blur-[140px]" />
       </div>
 
-      <Navigation ctaText="Products" ctaHref="/products" />
+      <Navigation ctaText="Book a Call" ctaHref="/coaching" />
 
       <section className="mx-auto max-w-2xl px-6 pt-24 pb-24 text-center">
         <h1 className="text-4xl md:text-5xl font-bold tracking-tight">
@@ -29,10 +29,10 @@ export default function CheckoutCancelPage() {
 
         <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
           <Link
-            href="/products"
+            href="/coaching"
             className="inline-flex items-center justify-center rounded-2xl bg-white px-8 py-4 text-base font-medium text-zinc-950 hover:bg-zinc-200 transition"
           >
-            View products
+            Book a Call
           </Link>
           <Link
             href="/"
@@ -46,14 +46,10 @@ export default function CheckoutCancelPage() {
           <h2 className="text-lg font-semibold mb-2">Have questions?</h2>
           <p className="text-zinc-400">
             Check out the{" "}
-            <Link href="/coaching" className="text-emerald-400 hover:underline">
+            <Link href="/coaching" className="text-[#C2581F] hover:underline">
               coaching page
             </Link>{" "}
-            to learn more about personalized programs, or explore the free{" "}
-            <Link href="/start" className="text-emerald-400 hover:underline">
-              blueprint
-            </Link>{" "}
-            to get started.
+            to learn more about personalized programs.
           </p>
         </div>
       </section>

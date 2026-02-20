@@ -1,10 +1,15 @@
 import { NextRequest, NextResponse } from "next/server";
 import { Resend } from "resend";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+function getResend() {
+  const key = process.env.RESEND_API_KEY;
+  if (!key) throw new Error("RESEND_API_KEY is not set");
+  return new Resend(key);
+}
 
 export async function POST(request: NextRequest) {
   try {
+    const resend = getResend();
     const { email, name } = await request.json();
 
     // Validate required fields

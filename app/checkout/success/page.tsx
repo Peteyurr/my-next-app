@@ -15,7 +15,7 @@ export default function CheckoutSuccessPage() {
         <div className="absolute bottom-[-220px] right-[-160px] h-[600px] w-[600px] rounded-full bg-indigo-400/10 blur-[140px]" />
       </div>
 
-      <Navigation ctaText="Products" ctaHref="/products" />
+      <Navigation ctaText="Book a Call" ctaHref="/coaching" />
 
       <section className="mx-auto max-w-2xl px-6 pt-24 pb-24 text-center">
         {/* Success Icon */}
@@ -64,10 +64,10 @@ export default function CheckoutSuccessPage() {
 
         <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
           <Link
-            href="/products"
+            href="/coaching"
             className="inline-flex items-center justify-center rounded-2xl border border-zinc-800 bg-zinc-900/40 px-8 py-4 text-base font-medium text-white hover:bg-zinc-900 transition"
           >
-            View more products
+            Book a Call
           </Link>
           <Link
             href="/"

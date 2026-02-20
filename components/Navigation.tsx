@@ -105,9 +105,6 @@ export default function Navigation({
             <Link href="/about" className="hover:text-white transition-colors">
               About
             </Link>
-            <Link href="/products" className="hover:text-white transition-colors">
-              Products
-            </Link>
             <Link href="/coaching" className="hover:text-white transition-colors">
               Coaching
             </Link>
@@ -160,13 +157,6 @@ export default function Navigation({
                 onClick={() => setMobileMenuOpen(false)}
               >
                 About
-              </Link>
-              <Link
-                href="/products"
-                className="text-zinc-300 hover:text-white transition-colors"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                Products
               </Link>
               <Link
                 href="/coaching"
