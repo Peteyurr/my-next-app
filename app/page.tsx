@@ -33,7 +33,7 @@ export default function HomePage() {
             alt="Jake Peterson training"
             fill
             className="block md:hidden object-cover"
-            style={{ objectPosition: "70% 20%" }}
+            style={{ objectPosition: "75% 15%" }}
             priority
           />
           {/* Desktop background */}
