@@ -32,7 +32,8 @@ export default function HomePage() {
             src="/about/training.jpg"
             alt="Jake Peterson training"
             fill
-            className="block md:hidden object-cover object-center"
+            className="block md:hidden object-cover"
+            style={{ objectPosition: "70% 20%" }}
             priority
           />
           {/* Desktop background */}
