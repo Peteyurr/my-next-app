@@ -42,116 +42,113 @@ export default function CoachingPage() {
         </p>
       </section>
 
-      {/* Main content */}
+      {/* Calendar — directly after hero */}
+      <section className="mx-auto max-w-3xl px-6 md:px-12 lg:px-16 py-8">
+        <div className="rounded-3xl border border-zinc-800 bg-zinc-900/50 p-4 sm:p-8">
+          <h2
+            className="text-3xl font-black uppercase text-white mb-2"
+            style={{ fontFamily: "Oswald, sans-serif" }}
+          >
+            Book your call
+          </h2>
+          <p className="text-zinc-500 text-sm mb-6">Free. 30 minutes. No obligation.</p>
+
+          <div className="h-[500px] md:h-[700px] overflow-x-auto">
+            <iframe
+              src="https://calendly.com/jake24peterson/30min?embed_type=Inline&hide_landing_page_details=1&hide_gdpr_banner=1"
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              title="Book a Strategy Call"
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* Info sections */}
       <section className="mx-auto max-w-7xl px-6 md:px-12 lg:px-16 py-12">
         <div className="grid gap-10 lg:grid-cols-2">
 
-          {/* Left — Info */}
-          <div className="space-y-6">
-
-            {/* What you get */}
-            <div className="rounded-3xl border border-zinc-800 bg-zinc-900/50 p-8">
-              <h3
-                className="text-2xl font-black uppercase text-white mb-6"
-                style={{ fontFamily: "Oswald, sans-serif" }}
-              >
-                What's included
-              </h3>
-              <ul className="space-y-4">
-                {[
-                  "Custom programming synced to your training schedule",
-                  "Weekly check-ins and program adjustments",
-                  "Direct messaging access — ask anything, anytime",
-                  "Video movement analysis and form feedback",
-                ].map((item, i) => (
-                  <li key={i} className="flex items-start gap-3 text-zinc-300">
-                    <span className="mt-1 h-px w-4 bg-[#C2581F] flex-shrink-0 mt-2.5" />
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* What the call looks like */}
-            <div className="rounded-3xl border border-zinc-800 bg-zinc-900/50 p-8">
-              <h3
-                className="text-2xl font-black uppercase text-white mb-6"
-                style={{ fontFamily: "Oswald, sans-serif" }}
-              >
-                The call
-              </h3>
-              <p className="text-zinc-400 text-sm leading-relaxed mb-5">
-                30 minutes. No pitch, no pressure. We'll talk about your training, your goals, and whether custom programming actually makes sense for where you're at.
-              </p>
-              <ul className="space-y-3">
-                {[
-                  "Review your current schedule and recovery",
-                  "Identify what's holding you back",
-                  "Walk through how the programming works",
-                  "If it's a fit — we can start immediately",
-                ].map((item, i) => (
-                  <li key={i} className="flex items-start gap-3 text-zinc-400 text-sm">
-                    <span className="text-[#C2581F] font-bold flex-shrink-0">0{i + 1}</span>
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Testimonials */}
-            <div className="space-y-4">
-              <div className="rounded-3xl border border-zinc-800 bg-zinc-900/40 p-8">
-                <div className="flex gap-1 mb-4">
-                  {[...Array(5)].map((_, i) => <span key={i} className="text-[#C2581F] text-sm">★</span>)}
-                </div>
-                <p className="text-zinc-300 leading-relaxed text-sm">
-                  "Before this program I had no end goal in sight. Jake's program let me focus on joint health and mobility — it's helped my runs and overall performance significantly. Great mentor."
-                </p>
-                <div className="mt-6 pt-4 border-t border-zinc-800">
-                  <p className="font-bold text-white text-sm">Tyler</p>
-                  <p className="text-xs text-[#C2581F] uppercase tracking-wider mt-1">Runner — VO2 47 → 53 in 3 months</p>
-                </div>
-              </div>
-
-              <div className="rounded-3xl border border-zinc-800 bg-zinc-900/40 p-8">
-                <div className="flex gap-1 mb-4">
-                  {[...Array(5)].map((_, i) => <span key={i} className="text-[#C2581F] text-sm">★</span>)}
-                </div>
-                <p className="text-zinc-300 leading-relaxed text-sm">
-                  "The lifts are specifically tailored to build strength for Muay Thai. Real improvements in mobility, power, and conditioning. Everything feels purposeful."
-                </p>
-                <div className="mt-6 pt-4 border-t border-zinc-800">
-                  <p className="font-bold text-white text-sm">Will</p>
-                  <p className="text-xs text-[#C2581F] uppercase tracking-wider mt-1">Muay Thai Competitor</p>
-                </div>
-              </div>
-            </div>
-
+          {/* What you get */}
+          <div className="rounded-3xl border border-zinc-800 bg-zinc-900/50 p-8">
+            <h3
+              className="text-2xl font-black uppercase text-white mb-6"
+              style={{ fontFamily: "Oswald, sans-serif" }}
+            >
+              What's included
+            </h3>
+            <ul className="space-y-4">
+              {[
+                "Custom programming synced to your training schedule",
+                "Weekly check-ins and program adjustments",
+                "Direct messaging access — ask anything, anytime",
+                "Video movement analysis and form feedback",
+              ].map((item, i) => (
+                <li key={i} className="flex items-start gap-3 text-zinc-300">
+                  <span className="mt-1 h-px w-4 bg-[#C2581F] flex-shrink-0 mt-2.5" />
+                  {item}
+                </li>
+              ))}
+            </ul>
           </div>
 
-          {/* Right — Calendar */}
-          <div>
-            <div className="rounded-3xl border border-zinc-800 bg-zinc-900/50 p-4 sm:p-8 sticky top-8">
-              <h2
-                className="text-3xl font-black uppercase text-white mb-2"
-                style={{ fontFamily: "Oswald, sans-serif" }}
-              >
-                Book your call
-              </h2>
-              <p className="text-zinc-500 text-sm mb-6">Free. 30 minutes. No obligation.</p>
+          {/* What the call looks like */}
+          <div className="rounded-3xl border border-zinc-800 bg-zinc-900/50 p-8">
+            <h3
+              className="text-2xl font-black uppercase text-white mb-6"
+              style={{ fontFamily: "Oswald, sans-serif" }}
+            >
+              The call
+            </h3>
+            <p className="text-zinc-400 text-sm leading-relaxed mb-5">
+              30 minutes. No pitch, no pressure. We'll talk about your training, your goals, and whether custom programming actually makes sense for where you're at.
+            </p>
+            <ul className="space-y-3">
+              {[
+                "Review your current schedule and recovery",
+                "Identify what's holding you back",
+                "Walk through how the programming works",
+                "If it's a fit — we can start immediately",
+              ].map((item, i) => (
+                <li key={i} className="flex items-start gap-3 text-zinc-400 text-sm">
+                  <span className="text-[#C2581F] font-bold flex-shrink-0">0{i + 1}</span>
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
 
-              <div className="h-[500px] md:h-[700px] overflow-x-auto">
-                <iframe
-                  src="https://calendly.com/jake24peterson/30min?embed_type=Inline&hide_landing_page_details=1&hide_gdpr_banner=1"
-                  width="100%"
-                  height="100%"
-                  style={{ border: 0 }}
-                  title="Book a Strategy Call"
-                />
-              </div>
+        </div>
+      </section>
+
+      {/* Testimonials */}
+      <section className="mx-auto max-w-7xl px-6 md:px-12 lg:px-16 py-8">
+        <div className="grid gap-6 md:grid-cols-2">
+          <div className="rounded-3xl border border-zinc-800 bg-zinc-900/40 p-8">
+            <div className="flex gap-1 mb-4">
+              {[...Array(5)].map((_, i) => <span key={i} className="text-[#C2581F] text-sm">★</span>)}
+            </div>
+            <p className="text-zinc-300 leading-relaxed text-sm">
+              "Before this program I had no end goal in sight. Jake's program let me focus on joint health and mobility — it's helped my runs and overall performance significantly. Great mentor."
+            </p>
+            <div className="mt-6 pt-4 border-t border-zinc-800">
+              <p className="font-bold text-white text-sm">Tyler</p>
+              <p className="text-xs text-[#C2581F] uppercase tracking-wider mt-1">Runner — VO2 47 → 53 in 3 months</p>
             </div>
           </div>
 
+          <div className="rounded-3xl border border-zinc-800 bg-zinc-900/40 p-8">
+            <div className="flex gap-1 mb-4">
+              {[...Array(5)].map((_, i) => <span key={i} className="text-[#C2581F] text-sm">★</span>)}
+            </div>
+            <p className="text-zinc-300 leading-relaxed text-sm">
+              "The lifts are specifically tailored to build strength for Muay Thai. Real improvements in mobility, power, and conditioning. Everything feels purposeful."
+            </p>
+            <div className="mt-6 pt-4 border-t border-zinc-800">
+              <p className="font-bold text-white text-sm">Will</p>
+              <p className="text-xs text-[#C2581F] uppercase tracking-wider mt-1">Muay Thai Competitor</p>
+            </div>
+          </div>
         </div>
       </section>
 
