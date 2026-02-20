@@ -89,15 +89,15 @@ export default function Navigation({
       )}
 
       {/* Main Navigation */}
-      <header className="sticky top-0 z-20 bg-[#1A1A1A] border-b border-zinc-800/60">
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
+      <header className="sticky top-0 z-20 bg-[#000000] border-b border-zinc-800/60 h-20">
+        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 h-full">
           <Link href="/" className="flex items-center">
             <Image
               src="/B_-_4.PNG"
               alt="Built for Performance"
-              width={133}
-              height={40}
-              className="h-12 w-auto"
+              width={213}
+              height={64}
+              className="h-16 w-auto"
               priority
             />
           </Link>
