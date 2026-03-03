@@ -16,7 +16,7 @@ export default function ProductThankYouPage() {
         <div className="absolute bottom-[-220px] right-[-160px] h-[600px] w-[600px] rounded-full bg-indigo-400/10 blur-[140px]" />
       </div>
 
-      <Navigation showBanner={false} ctaText="Book a Call" ctaHref="/coaching" />
+      <Navigation ctaText="Book a Call" ctaHref="/coaching" />
 
       <section className="mx-auto max-w-2xl px-6 pt-20 pb-24">
         <FadeIn>
@@ -85,7 +85,7 @@ export default function ProductThankYouPage() {
           </p>
           <Link
             href="/coaching"
-            className="mt-6 inline-flex items-center justify-center rounded-2xl bg-white px-8 py-4 text-base font-semibold text-zinc-950 hover:bg-zinc-200 transition"
+            className="mt-6 inline-flex items-center justify-center rounded-2xl bg-white px-8 py-4 text-base font-semibold text-zinc-950 hover:bg-zinc-200 active:scale-95 transition"
           >
             Apply for coaching
           </Link>

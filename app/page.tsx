@@ -43,7 +43,7 @@ export default function HomePage() {
           ].map((text, i) => (
             <FadeIn key={i} delay={i * 100}>
               <div
-                className="group rounded-2xl border border-zinc-800 bg-zinc-900/40 px-5 py-5 hover:border-[#C2581F]/40 hover:bg-zinc-900/70 transition-all duration-300"
+                className="group rounded-2xl border border-zinc-800 bg-zinc-900/40 px-5 py-5 hover:border-[#C2581F]/40 hover:bg-zinc-900/70 hover:scale-[1.02] transition-all duration-300"
               >
                 <span className="text-[#C2581F] font-black text-2xl block mb-3" style={{ fontFamily: "Oswald, sans-serif" }}>
                   0{i + 1}
@@ -153,10 +153,9 @@ export default function HomePage() {
             {/* Coaching */}
             <Link
               href="/coaching"
-              className="group relative rounded-3xl border border-zinc-800 bg-zinc-900/50 p-8 hover:border-[#C2581F]/60 transition-all duration-300 overflow-hidden"
+              className="group relative rounded-3xl border border-zinc-800 bg-zinc-900/50 p-8 hover:border-[#C2581F]/60 hover:scale-[1.02] transition-all duration-300 overflow-hidden"
             >
               <div className="absolute top-0 left-0 h-1 w-0 bg-[#C2581F] group-hover:w-full transition-all duration-500" />
-              <p className="text-xs font-bold uppercase tracking-widest text-[#C2581F] mb-4">Limited Spots</p>
               <h3
                 className="text-3xl font-black uppercase text-white group-hover:text-[#C2581F] transition-colors mb-4"
                 style={{ fontFamily: "Oswald, sans-serif" }}
@@ -230,7 +229,7 @@ export default function HomePage() {
         <div className="grid gap-6 md:grid-cols-3">
           {/* Will */}
           <FadeIn delay={0}>
-            <div className="rounded-3xl border border-zinc-800 bg-zinc-900/40 p-8 hover:border-[#C2581F]/30 transition-all duration-300 h-full">
+            <div className="rounded-3xl border border-zinc-800 bg-zinc-900/40 p-8 hover:border-[#C2581F]/30 hover:scale-[1.02] transition-all duration-300 h-full">
               <div className="flex items-center gap-1 mb-6">
                 {[...Array(5)].map((_, i) => (
                   <span key={i} className="text-[#C2581F] text-sm">★</span>
@@ -248,7 +247,7 @@ export default function HomePage() {
 
           {/* Tyler */}
           <FadeIn delay={150}>
-            <div className="rounded-3xl border border-[#C2581F]/20 bg-zinc-900/60 p-8 relative h-full">
+            <div className="rounded-3xl border border-[#C2581F]/20 bg-zinc-900/60 p-8 relative h-full hover:scale-[1.02] transition-all duration-300">
               <div className="absolute -top-3 left-8">
                 <span className="bg-[#C2581F] text-white text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full">
                   VO2 47 → 53
@@ -271,7 +270,7 @@ export default function HomePage() {
 
           {/* Jasmyn */}
           <FadeIn delay={300}>
-            <div className="rounded-3xl border border-zinc-800 bg-zinc-900/40 p-8 hover:border-[#C2581F]/30 transition-all duration-300 h-full">
+            <div className="rounded-3xl border border-zinc-800 bg-zinc-900/40 p-8 hover:border-[#C2581F]/30 hover:scale-[1.02] transition-all duration-300 h-full">
               <div className="flex items-center gap-1 mb-6">
                 {[...Array(5)].map((_, i) => (
                   <span key={i} className="text-[#C2581F] text-sm">★</span>
@@ -322,7 +321,7 @@ export default function HomePage() {
       <section className="mx-auto max-w-7xl px-6 md:px-12 lg:px-16 py-8 md:py-24">
         <div className="grid gap-6 md:grid-cols-3">
           <FadeIn delay={0}>
-          <div className="rounded-3xl border border-zinc-800 bg-zinc-900/50 p-8 h-full">
+          <div className="rounded-3xl border border-zinc-800 bg-zinc-900/50 p-8 h-full hover:scale-[1.02] transition-all duration-300">
             <h2
               className="text-2xl font-black uppercase text-white mb-4"
               style={{ fontFamily: "Oswald, sans-serif" }}
@@ -338,7 +337,7 @@ export default function HomePage() {
           </FadeIn>
 
           <FadeIn delay={150}>
-          <div className="rounded-3xl border border-[#C2581F]/20 bg-[#C2581F]/5 p-8 h-full">
+          <div className="rounded-3xl border border-[#C2581F]/20 bg-[#C2581F]/5 p-8 h-full hover:scale-[1.02] transition-all duration-300">
             <h2
               className="text-2xl font-black uppercase text-[#C2581F] mb-4"
               style={{ fontFamily: "Oswald, sans-serif" }}
@@ -355,7 +354,7 @@ export default function HomePage() {
           </FadeIn>
 
           <FadeIn delay={300}>
-          <div className="rounded-3xl border border-zinc-800 bg-zinc-900/50 p-8 h-full">
+          <div className="rounded-3xl border border-zinc-800 bg-zinc-900/50 p-8 h-full hover:scale-[1.02] transition-all duration-300">
             <h2
               className="text-2xl font-black uppercase text-white mb-4"
               style={{ fontFamily: "Oswald, sans-serif" }}
@@ -407,7 +406,7 @@ export default function HomePage() {
           <div className="mt-10">
             <Link
               href="/coaching"
-              className="inline-flex items-center justify-center rounded-xl bg-[#C2581F] px-10 py-4 text-base font-bold text-white hover:bg-[#E06A28] transition-all duration-200 shadow-xl shadow-[#C2581F]/30"
+              className="inline-flex items-center justify-center rounded-xl bg-[#C2581F] px-10 py-4 text-base font-bold text-white hover:bg-[#E06A28] active:scale-95 transition-all duration-200 shadow-xl shadow-[#C2581F]/30"
             >
               Book a Call
             </Link>
