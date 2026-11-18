@@ -1,5 +1,17 @@
 @import "tailwindcss";
 
+@theme inline {
+  --color-cream: #F4F1EA;
+  --color-cream-dark: #EDE9E0;
+  --color-sand: #E7E2D7;
+  --color-ink: #0A0A0A;
+  --color-stone: #57534E;
+  --color-stone-dark: #3F3B36;
+  --color-line: #BDB6A8;
+  --font-display: var(--font-montserrat);
+  --font-sans: var(--font-inter);
+}
+
 /* Brand colors */
 :root {
   --bfp-orange: #C2581F;
