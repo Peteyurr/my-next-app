@@ -25,7 +25,6 @@
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
-import Navigation from "@/components/Navigation";
 import FadeIn from "@/components/FadeIn";
 import { getProductBySlug, getAllProducts } from "@/lib/products";
 import { CheckoutButton } from "./CheckoutButton";
@@ -67,7 +66,6 @@ export default async function ProductPage({ params }: ProductPageProps) {
         <div className="absolute bottom-[-220px] right-[-160px] h-[600px] w-[600px] rounded-full bg-[#E06A28]/10 blur-[140px]" />
       </div>
 
-      <Navigation />
 
       <section className="mx-auto max-w-7xl px-6 pt-12 pb-24">
         {/* Breadcrumb */}

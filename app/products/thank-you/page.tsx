@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Navigation from "@/components/Navigation";
 import FadeIn from "@/components/FadeIn";
 
 export const metadata = {
@@ -16,7 +15,6 @@ export default function ProductThankYouPage() {
         <div className="absolute bottom-[-220px] right-[-160px] h-[600px] w-[600px] rounded-full bg-indigo-400/10 blur-[140px]" />
       </div>
 
-      <Navigation />
 
       <section className="mx-auto max-w-2xl px-6 pt-20 pb-24">
         <FadeIn>

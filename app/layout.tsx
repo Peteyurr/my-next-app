@@ -1,5 +1,8 @@
 import "./globals.css";
 import { Inter, Oswald, Montserrat } from "next/font/google";
+import Navigation from "@/components/Navigation";
+import Footer from "@/components/Footer";
+import StickyBookBar from "@/components/StickyBookBar";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -42,7 +45,10 @@ export default function RootLayout({
   return (
     <html lang="en" className={montserrat.variable}>
       <body className={`${inter.variable} ${oswald.variable} ${inter.className} bg-[#111111] text-zinc-50 antialiased`}>
+        <Navigation />
         {children}
+        <Footer />
+        <StickyBookBar />
       </body>
     </html>
   );

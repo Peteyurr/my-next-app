@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import Navigation from "@/components/Navigation";
 import FadeIn from "@/components/FadeIn";
 import { useState } from "react";
 
@@ -49,7 +48,6 @@ export default function ComingSoonPage() {
         <div className="absolute bottom-[-220px] right-[-160px] h-[600px] w-[600px] rounded-full bg-[#E06A28]/5 blur-[140px]" />
       </div>
 
-      <Navigation />
 
       {/* Coming Soon Content */}
       <section className="mx-auto max-w-3xl px-6 md:px-12 lg:px-16 pt-20 pb-32 text-center">

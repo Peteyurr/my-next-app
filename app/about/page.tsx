@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import Navigation from "@/components/Navigation";
 import FadeIn from "@/components/FadeIn";
 
 const credentials = [
@@ -32,7 +31,6 @@ export default function AboutPage() {
         <div className="absolute bottom-[-220px] right-[-160px] h-[600px] w-[600px] rounded-full bg-orange-500/5 blur-[140px]" />
       </div>
 
-      <Navigation />
 
       {/* ============================================================
           HERO

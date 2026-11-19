@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Navigation from "@/components/Navigation";
 import Testimonial from "@/components/Testimonial";
 import Image from "next/image";
 import NotifyForm from "@/components/NotifyForm";
@@ -20,7 +19,6 @@ export default function HomePage() {
         }}
       />
 
-      <Navigation />
 
       {/* ============================================================
           HERO — Full bleed image, split layout
