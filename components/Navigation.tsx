@@ -26,7 +26,7 @@ export default function Navigation() {
   const pathname = usePathname();
 
   return (
-    <header className="sticky top-0 z-40 border-b-2 border-ink bg-cream">
+    <header className="sticky top-0 z-40 border-b-2 border-ink bg-cream text-ink">
       <div className="mx-auto flex h-20 max-w-[1200px] items-center justify-between px-6 lg:h-24">
         <Link href="/" className="flex items-center">
           <Image
@@ -69,7 +69,7 @@ export default function Navigation() {
           <SheetTrigger asChild>
             <button
               aria-label="Open menu"
-              className="flex h-11 w-11 items-center justify-center border-2 border-ink lg:hidden"
+              className="flex h-11 w-11 items-center justify-center border-2 border-ink text-ink lg:hidden"
             >
               <Menu className="h-6 w-6" aria-hidden="true" />
             </button>
