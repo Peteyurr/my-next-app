@@ -1,4 +1,8 @@
 @import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
 
 @theme inline {
   --color-cream: #F4F1EA;
@@ -10,12 +14,57 @@
   --color-line: #BDB6A8;
   --font-display: var(--font-montserrat);
   --font-sans: var(--font-inter);
+  --font-heading: var(--font-sans);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --color-foreground: var(--foreground);
+  --color-background: var(--background);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
 }
 
 /* Brand colors */
 :root {
   --bfp-orange: #C2581F;
   --bfp-orange-light: #E06A28;
+  --background: #F4F1EA;
+  --foreground: #0A0A0A;
+  --card: #F4F1EA;
+  --card-foreground: #0A0A0A;
+  --popover: #F4F1EA;
+  --popover-foreground: #0A0A0A;
+  --primary: #0A0A0A;
+  --primary-foreground: #F4F1EA;
+  --secondary: #EDE9E0;
+  --secondary-foreground: #0A0A0A;
+  --muted: #EDE9E0;
+  --muted-foreground: #57534E;
+  --accent: #EDE9E0;
+  --accent-foreground: #0A0A0A;
+  --destructive: #0A0A0A;
+  --border: #0A0A0A;
+  --input: #0A0A0A;
+  --ring: #0A0A0A;
+  --radius: 0;
 }
 
 /* Global reset only — Tailwind controls everything else */
@@ -23,4 +72,16 @@ html,
 body {
   margin: 0;
   padding: 0;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  html {
+    @apply font-sans;
+  }
 }

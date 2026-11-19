@@ -23,7 +23,7 @@ export default function CoachingPage() {
         <div className="absolute bottom-[-220px] right-[-160px] h-[600px] w-[600px] rounded-full bg-orange-500/5 blur-[140px]" />
       </div>
 
-      <Navigation ctaText="Book a Call" ctaHref="/coaching" />
+      <Navigation />
 
       {/* Hero */}
       <section className="mx-auto max-w-7xl px-6 md:px-12 lg:px-16 pt-16 pb-8">

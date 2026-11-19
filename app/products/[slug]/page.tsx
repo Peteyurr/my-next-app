@@ -67,7 +67,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
         <div className="absolute bottom-[-220px] right-[-160px] h-[600px] w-[600px] rounded-full bg-[#E06A28]/10 blur-[140px]" />
       </div>
 
-      <Navigation ctaText="Book a Call" ctaHref="/coaching" />
+      <Navigation />
 
       <section className="mx-auto max-w-7xl px-6 pt-12 pb-24">
         {/* Breadcrumb */}

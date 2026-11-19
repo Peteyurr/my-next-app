@@ -15,7 +15,7 @@ export default function CheckoutCancelPage() {
         <div className="absolute bottom-[-220px] right-[-160px] h-[600px] w-[600px] rounded-full bg-emerald-400/10 blur-[140px]" />
       </div>
 
-      <Navigation ctaText="Book a Call" ctaHref="/coaching" />
+      <Navigation />
 
       <section className="mx-auto max-w-2xl px-6 pt-24 pb-24 text-center">
         <h1 className="text-4xl md:text-5xl font-bold tracking-tight">

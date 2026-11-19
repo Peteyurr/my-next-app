@@ -32,7 +32,7 @@ export default function AboutPage() {
         <div className="absolute bottom-[-220px] right-[-160px] h-[600px] w-[600px] rounded-full bg-orange-500/5 blur-[140px]" />
       </div>
 
-      <Navigation ctaText="Work with Me" ctaHref="/coaching" />
+      <Navigation />
 
       {/* ============================================================
           HERO

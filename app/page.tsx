@@ -20,7 +20,7 @@ export default function HomePage() {
         }}
       />
 
-      <Navigation ctaText="Book a Call" ctaHref="/coaching" />
+      <Navigation />
 
       {/* ============================================================
           HERO — Full bleed image, split layout

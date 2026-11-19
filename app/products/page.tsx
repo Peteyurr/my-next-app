@@ -49,7 +49,7 @@ export default function ComingSoonPage() {
         <div className="absolute bottom-[-220px] right-[-160px] h-[600px] w-[600px] rounded-full bg-[#E06A28]/5 blur-[140px]" />
       </div>
 
-      <Navigation ctaText="Book a Call" ctaHref="/coaching" />
+      <Navigation />
 
       {/* Coming Soon Content */}
       <section className="mx-auto max-w-3xl px-6 md:px-12 lg:px-16 pt-20 pb-32 text-center">

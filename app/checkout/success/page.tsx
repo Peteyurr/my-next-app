@@ -15,7 +15,7 @@ export default function CheckoutSuccessPage() {
         <div className="absolute bottom-[-220px] right-[-160px] h-[600px] w-[600px] rounded-full bg-indigo-400/10 blur-[140px]" />
       </div>
 
-      <Navigation ctaText="Book a Call" ctaHref="/coaching" />
+      <Navigation />
 
       <section className="mx-auto max-w-2xl px-6 pt-24 pb-24 text-center">
         {/* Success Icon */}
