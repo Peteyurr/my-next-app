@@ -21,9 +21,17 @@ const montserrat = Montserrat({
 });
 
 export const metadata = {
-  title: "Built for Performance — Combat Strength & Conditioning",
-  description: "Strength + conditioning built for athletes who train with purpose.",
+  metadataBase: new URL("https://peteyurr.com"),
+  title: "Built for Performance | Strength & Conditioning with Jake Peterson",
+  description:
+    "Strength and conditioning coaching for athletes and everyday people. In person at Dragon Gym in Exton, PA, or online.",
   icons: { icon: "/B_-_8.PNG" },
+  openGraph: {
+    title: "Built for Performance | Strength & Conditioning with Jake Peterson",
+    description:
+      "Strength and conditioning coaching for athletes and everyday people. In person at Dragon Gym in Exton, PA, or online.",
+    siteName: "Built for Performance",
+  },
 };
 
 export default function RootLayout({

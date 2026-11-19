@@ -27,11 +27,11 @@ export default function Navigation({
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 h-full">
           <Link href="/" className="flex items-center">
             <Image
-              src="/B_-_4.PNG"
+              src="/bfp-logo-ink.png"
               alt="Built for Performance"
-              width={213}
-              height={64}
-              className="h-16 w-auto"
+              width={75}
+              height={56}
+              className="h-10 w-auto md:h-14"
               priority
             />
           </Link>
