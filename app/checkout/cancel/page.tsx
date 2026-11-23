@@ -21,8 +21,8 @@ export default function CheckoutCancelPage() {
         </h1>
 
         <p className="mt-4 text-lg text-zinc-300 leading-relaxed">
-          No worries — your cart wasn't charged. Feel free to browse or come
-          back when you're ready.
+          No worries — your cart wasn&apos;t charged. Feel free to browse or come
+          back when you&apos;re ready.
         </p>
 
         <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">

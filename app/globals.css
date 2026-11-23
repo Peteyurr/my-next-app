@@ -44,10 +44,7 @@
   --radius-4xl: calc(var(--radius) * 2.6);
 }
 
-/* Brand colors */
 :root {
-  --bfp-orange: #C2581F;
-  --bfp-orange-light: #E06A28;
   --background: #F4F1EA;
   --foreground: #0A0A0A;
   --card: #F4F1EA;

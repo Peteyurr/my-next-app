@@ -121,8 +121,8 @@ export default function ComingSoonPage() {
         <div className="mt-12 max-w-md mx-auto">
           {status === "success" ? (
             <div className="rounded-2xl border border-[#C2581F]/30 bg-[#C2581F]/10 p-6">
-              <p className="text-[#C2581F] font-semibold">You're on the list!</p>
-              <p className="text-zinc-400 text-sm mt-2">We'll let you know when it drops.</p>
+              <p className="text-[#C2581F] font-semibold">You&apos;re on the list!</p>
+              <p className="text-zinc-400 text-sm mt-2">We&apos;ll let you know when it drops.</p>
             </div>
           ) : (
             <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3">

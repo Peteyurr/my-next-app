@@ -1,5 +1,5 @@
 import "./globals.css";
-import { Inter, Oswald, Montserrat } from "next/font/google";
+import { Inter, Montserrat } from "next/font/google";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import StickyBookBar from "@/components/StickyBookBar";
@@ -8,12 +8,6 @@ const inter = Inter({
   subsets: ["latin"],
   display: "swap",
   variable: "--font-inter",
-});
-
-const oswald = Oswald({
-  subsets: ["latin"],
-  display: "swap",
-  variable: "--font-oswald",
 });
 
 const montserrat = Montserrat({
@@ -28,7 +22,6 @@ export const metadata = {
   title: "Built for Performance | Strength & Conditioning with Jake Peterson",
   description:
     "Strength and conditioning coaching for athletes and everyday people. In person at Dragon Gym in Exton, PA, or online.",
-  icons: { icon: "/B_-_8.PNG" },
   openGraph: {
     title: "Built for Performance | Strength & Conditioning with Jake Peterson",
     description:
@@ -43,8 +36,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={montserrat.variable}>
-      <body className={`${inter.variable} ${oswald.variable} ${inter.className} bg-[#111111] text-zinc-50 antialiased`}>
+    <html lang="en" className={`${montserrat.variable} ${inter.variable}`}>
+      <body className="bg-cream font-sans text-ink antialiased">
         <Navigation />
         {children}
         <Footer />

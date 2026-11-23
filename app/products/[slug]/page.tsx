@@ -146,7 +146,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
             {/* Features */}
             <div className="mt-10">
               <h3 className="text-sm font-semibold uppercase tracking-wider text-zinc-400 mb-4">
-                What you'll learn
+                What you&apos;ll learn
               </h3>
               <ul className="space-y-3">
                 {product.features.map((feature, index) => (
@@ -161,7 +161,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
             {/* What's Included */}
             <div className="mt-10 rounded-2xl border border-zinc-800 bg-zinc-900/50 p-6">
               <h3 className="text-sm font-semibold uppercase tracking-wider text-zinc-400 mb-4">
-                What's included
+                What&apos;s included
               </h3>
               <ul className="space-y-3">
                 {product.includes.map((item, index) => (

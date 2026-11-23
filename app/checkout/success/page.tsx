@@ -34,7 +34,7 @@ export default function CheckoutSuccessPage() {
         </div>
 
         <h1 className="text-4xl md:text-5xl font-bold tracking-tight">
-          You're all set!
+          You&apos;re all set!
         </h1>
 
         <p className="mt-4 text-lg text-zinc-300 leading-relaxed">
@@ -43,7 +43,7 @@ export default function CheckoutSuccessPage() {
         </p>
 
         <div className="mt-10 rounded-2xl border border-zinc-800 bg-zinc-900/50 p-8">
-          <h2 className="text-lg font-semibold mb-2">What's next?</h2>
+          <h2 className="text-lg font-semibold mb-2">What&apos;s next?</h2>
           <ul className="text-left text-zinc-300 space-y-3 mt-4">
             <li className="flex items-start gap-3">
               <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-emerald-400 flex-shrink-0" />

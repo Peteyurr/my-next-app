@@ -36,11 +36,11 @@ export default function ProductThankYouPage() {
         </div>
 
         <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-center">
-          You're all set!
+          You&apos;re all set!
         </h1>
 
         <p className="mt-4 text-lg text-zinc-300 text-center leading-relaxed">
-          Check your email (including spam) for your download link. You'll
+          Check your email (including spam) for your download link. You&apos;ll
           receive it within 5 minutes.
         </p>
         </FadeIn>
@@ -48,7 +48,7 @@ export default function ProductThankYouPage() {
         {/* What's Next */}
         <FadeIn delay={100}>
         <div className="mt-10 rounded-2xl border border-zinc-800 bg-zinc-900/50 p-6">
-          <h2 className="font-semibold text-white mb-4">What's next:</h2>
+          <h2 className="font-semibold text-white mb-4">What&apos;s next:</h2>
           <ul className="space-y-3 text-zinc-300">
             <li className="flex items-start gap-3">
               <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-emerald-400 flex-shrink-0" />
