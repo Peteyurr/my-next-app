@@ -3,7 +3,8 @@ import Testimonial from "@/components/Testimonial";
 import Image from "next/image";
 import NotifyForm from "@/components/NotifyForm";
 import FadeIn from "@/components/FadeIn";
-import HeroSection from "@/components/HeroSection";
+import Hero from "@/components/home/Hero";
+import CredentialStrip from "@/components/home/CredentialStrip";
 
 export default function HomePage() {
   return (
@@ -21,9 +22,10 @@ export default function HomePage() {
 
 
       {/* ============================================================
-          HERO — Full bleed image, split layout
+          HERO — Cream hero + photo carousel + credentials strip
       ============================================================ */}
-      <HeroSection />
+      <Hero />
+      <CredentialStrip />
 
       {/* ============================================================
           WHO THIS IS FOR — Dark card row
