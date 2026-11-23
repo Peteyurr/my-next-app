@@ -14,11 +14,13 @@ const itemClass =
 export default function CredentialStrip() {
   return (
     <div className="bg-ink">
-      <div className="mx-auto flex max-w-[1200px] gap-6 overflow-x-auto px-6 py-4 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden lg:justify-between lg:gap-4 lg:overflow-visible">
+      {/* Phone/tablet: one row that scrolls sideways. lg+: wraps, centered, never scrolls. */}
+      <div className="mx-auto flex max-w-[1200px] gap-6 overflow-x-auto px-6 py-4 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden lg:flex-wrap lg:justify-center lg:gap-x-6 lg:gap-y-2.5 lg:overflow-visible">
         {CREDENTIALS.map((item, i) => (
-          <div key={item} className="flex shrink-0 items-center gap-6 lg:gap-4">
+          <div key={item} className="flex shrink-0 items-center gap-6">
             {i > 0 && (
-              <span aria-hidden="true" className="shrink-0 text-line">
+              // Separators would land at the start of a wrapped row on desktop, so hide them there.
+              <span aria-hidden="true" className="shrink-0 text-line lg:hidden">
                 ·
               </span>
             )}
