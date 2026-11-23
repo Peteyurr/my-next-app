@@ -86,4 +86,8 @@ body {
   html {
     @apply font-sans;
   }
+  /* Anchored sections land below the sticky header (82px phone / 98px desktop, incl. its 2px border). */
+  :where([id]) {
+    scroll-margin-top: 98px;
+  }
 }

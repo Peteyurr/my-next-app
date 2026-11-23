@@ -197,7 +197,7 @@ export default function CoachingOptions() {
   return (
     <section
       id="options"
-      className="scroll-mt-20 bg-cream pt-10 pb-20 text-ink md:pb-24 lg:scroll-mt-24 lg:pt-12"
+      className="bg-cream pt-10 pb-20 text-ink md:pb-24 lg:pt-12"
     >
       <div className="mx-auto max-w-[1200px] px-6">
         <MobileCards />

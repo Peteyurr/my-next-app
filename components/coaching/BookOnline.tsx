@@ -13,7 +13,7 @@ export default function BookOnline() {
   return (
     <section
       id="book-online"
-      className="scroll-mt-20 bg-cream py-20 text-ink md:py-24 lg:scroll-mt-24"
+      className="bg-cream py-20 text-ink md:py-24"
     >
       <div className="mx-auto grid max-w-[1200px] gap-10 px-6 lg:grid-cols-[minmax(0,380px)_minmax(0,1fr)] lg:gap-16">
         <div className="min-w-0">
