@@ -1,6 +1,6 @@
 import TestimonialMedia from "@/components/home/TestimonialMedia";
 
-const STORIES = [
+export const STORIES = [
   {
     name: "Tyler",
     descriptor: "Runner and recreational athlete",

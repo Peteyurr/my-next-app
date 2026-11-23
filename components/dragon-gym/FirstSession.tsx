@@ -1,6 +1,8 @@
 import { eyebrowClass, h2Class } from "./links";
 
-const STEPS = [
+export type Step = { title: string; body: string };
+
+const DEFAULT_STEPS: Step[] = [
   {
     title: "Movement screen",
     body: "A quick look at how you move, so training starts from where you actually are.",
@@ -15,15 +17,31 @@ const STEPS = [
   },
 ];
 
-export default function FirstSession() {
+type Props = {
+  eyebrow?: string;
+  heading?: string;
+  steps?: Step[];
+  columns?: 3 | 4;
+};
+
+export default function FirstSession({
+  eyebrow = "Your first session",
+  heading = "35 minutes. No pressure.",
+  steps = DEFAULT_STEPS,
+  columns = 3,
+}: Props) {
   return (
     <section className="border-y-2 border-ink bg-cream-dark py-20 text-ink md:py-24">
       <div className="mx-auto max-w-[1200px] px-6">
-        <p className={eyebrowClass}>Your first session</p>
-        <h2 className={h2Class}>35 minutes. No pressure.</h2>
+        <p className={eyebrowClass}>{eyebrow}</p>
+        <h2 className={h2Class}>{heading}</h2>
 
-        <ol className="mt-10 grid border-b-2 border-ink lg:grid-cols-3 lg:gap-8 lg:border-b-0">
-          {STEPS.map((step, i) => (
+        <ol
+          className={`mt-10 grid border-b-2 border-ink lg:gap-8 lg:border-b-0 ${
+            columns === 4 ? "lg:grid-cols-4" : "lg:grid-cols-3"
+          }`}
+        >
+          {steps.map((step, i) => (
             <li key={step.title} className="border-t-2 border-ink py-6 lg:pb-0">
               <span
                 aria-hidden="true"
