@@ -13,6 +13,7 @@
   --color-stone-dark: #3F3B36;
   --color-line: #BDB6A8;
   --color-ink-line: #333333;
+  --color-on-ink-muted: #D6D0C4;
   --font-display: var(--font-montserrat);
   --font-sans: var(--font-inter);
   --font-heading: var(--font-sans);
