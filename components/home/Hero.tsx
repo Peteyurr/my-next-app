@@ -138,7 +138,7 @@ function PhotoCarousel() {
 
 export default function Hero() {
   return (
-    <section className="bg-cream py-20 text-ink lg:py-24">
+    <section className="bg-cream pt-12 pb-14 text-ink lg:py-24">
       <div className="mx-auto grid max-w-[1200px] gap-10 px-6 lg:grid-cols-2 lg:items-center lg:gap-16">
         <div className="flex flex-col gap-6">
           <p className="font-display text-[12px] font-medium uppercase tracking-[0.38em] text-stone">
@@ -160,13 +160,13 @@ export default function Hero() {
           <div className="flex flex-col gap-3 sm:flex-row">
             <Link
               href="/dragon-gym"
-              className="font-display flex h-[54px] flex-1 items-center justify-center bg-ink text-[13px] font-bold uppercase tracking-[0.12em] text-cream"
+              className="font-display flex min-h-[54px] w-full px-7 sm:w-auto items-center justify-center bg-ink text-[13px] font-bold uppercase tracking-[0.12em] text-cream"
             >
               Book an in-person consult
             </Link>
             <Link
               href="/coaching"
-              className="font-display flex h-[54px] flex-1 items-center justify-center border-2 border-ink text-[13px] font-bold uppercase tracking-[0.12em] text-ink"
+              className="font-display flex min-h-[54px] w-full px-7 sm:w-auto items-center justify-center border-2 border-ink text-[13px] font-bold uppercase tracking-[0.12em] text-ink"
             >
               Explore online coaching
             </Link>
